@@ -1,0 +1,38 @@
+{
+  "name": "package",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:css": "stylelint '**/*.{css,scss}'",
+    "lint:css:fix": "stylelint '**/*.{css,scss}' --fix",
+    "format": "prettier . --write",
+    "lint": "npm run lint:js ; npm run lint:css",
+    "lint:fix": "npm run lint:js:fix ; npm run lint:css:fix ; npm run format",
+    "test:chrome": "npx playwright test --headed --browser=chromium",
+    "test:firefox": "npx playwright test --headed --browser=firefox",
+    "test:safari": "npx playwright test --headed --browser=webkit"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.57.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4",
+    "rollup-plugin-critical": "^1.0.15",
+    "sass": "^1.96.0",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "vite": "^7.2.4",
+    "vite-imagetools": "^9.0.2",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-pwa": "^1.2.0"
+  }
+}

@@ -1,0 +1,72 @@
+@use "variables" as *;
+
+// Breakpoints
+@mixin media-breakpoint-up($name) {
+  @if map-has-key($breakpoints, $name) {
+    $value: map-get($breakpoints, $name);
+    @media (min-width: #{$value}) {
+      @content;
+    }
+  } @else {
+    @warn "Неизвестный брейкпоинт: #{$name}";
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  @if map-has-key($breakpoints, $name) {
+    $value: map-get($breakpoints, $name);
+    $max-width: $value - 0.02px; // Reduce by 0.02px to prevent overlap
+    @media (max-width: #{$max-width}) {
+      @content;
+    }
+  } @else {
+    @warn "Неизвестный брейкпоинт: #{$name}";
+  }
+}
+
+// Button Mixin
+@mixin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0rem;
+  border-radius: 1.88rem;
+  border: none;
+  padding: 0.5rem 1.5rem 0.63rem;
+  background-color: $black;
+
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: 400;
+
+  cursor: pointer;
+  transition: $transition;
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    transition: $transition;
+    opacity: 0.85;
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: $transition;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Rounded Blocks
+@mixin rounded-block {
+  border-radius: 2.5rem;
+}

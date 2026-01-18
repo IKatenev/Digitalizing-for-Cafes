@@ -1,3 +1,24 @@
+@use '/src/scss/abstracts/' as *;
+@use 'fonts' as *;
 body {
   background: $white;
+}
+
+// Buttons
+.btn {
+  @include button();
+}
+.btn--white {
+  background-color: $white;
+  font-weight: 500;
+  a {
+    color: $black;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family;
+  font-weight: 400;
+  color: $black;
 }

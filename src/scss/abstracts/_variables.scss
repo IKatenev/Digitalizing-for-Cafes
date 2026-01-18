@@ -1,7 +1,6 @@
 // Typography
-$font-family: "TT Hoves", sans-serif;
-$second-family: "Inter", sans-serif;
-$third-family: "Neue Montreal", sans-serif;
+$font-family: "TT Hoves";
+$second-family: "Inter";
 
 // Colors
 $green: #e5fbe2;
@@ -14,6 +13,14 @@ $light-gray: rgba(0, 0, 0, 0.45);
 $white: #fff;
 
 // Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
-
-// BEM blocks
+// Decor
+$transition: all 0.5s ease-in-out;

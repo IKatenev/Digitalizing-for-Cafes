@@ -11,3 +11,5 @@ import fontMedium from "../assets/fonts/tthoves-medium.woff2?url";
   l.crossOrigin = "anonymous";
   document.head.appendChild(l);
 });
+
+import "../js/modules/burger-button.js";

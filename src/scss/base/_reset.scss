@@ -16,6 +16,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  scrollbar-gutter: stable;
 }
 
 /* Sections
@@ -80,6 +81,9 @@ pre {
 
 a {
   background-color: transparent;
+}
+a:where([class]) {
+  display: inline-flex;
 }
 
 /**
@@ -182,6 +186,10 @@ button,
 input { /* 1 */
   overflow: visible;
 }
+
+button, label {
+  cursor: pointer;
+} 
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -396,6 +404,7 @@ button:disabled {
 :focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
+  transition-duration: 0s !important;
 }
 
 :where(ul, ol):where([class]) {
@@ -421,13 +430,3 @@ body:where(blockquote, figure):where([class]) {
 input, textarea, select, button {
   font: inherit;
 }
-
-// Disabling animations and transitions for users who prefer reduced motion
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-} 

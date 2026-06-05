@@ -1,72 +1,58 @@
+@use "sass:math";
 @use "variables" as *;
+@use "functions" as *;
 
-// Breakpoints
-@mixin media-breakpoint-up($name) {
-  @if map-has-key($breakpoints, $name) {
-    $value: map-get($breakpoints, $name);
-    @media (min-width: #{$value}) {
-      @content;
-    }
-  } @else {
-    @warn "Неизвестный брейкпоинт: #{$name}";
-  }
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: fluid($max, $min);
 }
 
-@mixin media-breakpoint-down($name) {
-  @if map-has-key($breakpoints, $name) {
-    $value: map-get($breakpoints, $name);
-    $max-width: $value - 0.02px; // Reduce by 0.02px to prevent overlap
-    @media (max-width: #{$max-width}) {
-      @content;
-    }
-  } @else {
-    @warn "Неизвестный брейкпоинт: #{$name}";
-  }
+// Hide-Show Mixins
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
-// Button Mixin
-@mixin button {
-  display: flex;
-  align-items: center;
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+// Flex Center Mixin
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
   justify-content: center;
-  flex-direction: row;
-  gap: 0rem;
-  border-radius: 1.88rem;
-  border: none;
-  padding: 0.5rem 1.5rem 0.63rem;
-  background-color: $black;
-
-  font-family: $font-family;
-  font-size: 1rem;
-  font-weight: 400;
-
-  cursor: pointer;
-  transition: $transition;
-
-  a {
-    text-decoration: none;
-    color: $white;
-  }
-
-  &:hover,
-  &:focus {
-    transition: $transition;
-    opacity: 0.85;
-    outline: none;
-  }
-
-  &:active {
-    transform: scale(0.98);
-    transition: $transition;
-  }
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+  align-items: center;
 }
 
-// Rounded Blocks
-@mixin rounded-block {
-  border-radius: 2.5rem;
+// Absolute Center Mixin
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+// Square Mixin
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// Visually Hidden Mixin
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
 }

@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+
+.burger-button {
+  @include flex-center;
+
+  flex-direction: column;
+  width: rem(48);
+  height: rem(48);
+  gap: rem(3);
+
+
+  background-color: var(--white);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+
+  &__line {
+    display: block;
+    width: rem(20);
+    height: rem(2);
+
+    background-color: var(--black);
+
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  &.is-active {
+    gap: 0;
+    .burger-button__line {
+      &:first-child {
+        rotate: 45deg;
+      }
+      &:last-child {
+        rotate: -45deg;
+      }
+    }
+  }
+
+  @include laptop {
+      justify-self: flex-end;
+    }
+
+    &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(56));
+
+      content: '';
+    }
+  }
+}

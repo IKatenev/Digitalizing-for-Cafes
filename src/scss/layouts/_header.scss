@@ -1,0 +1,92 @@
+@use "../abstracts" as *;
+@use "../utilities" as *;
+
+.header {
+  margin-top: rem(28);
+  white-space: nowrap;
+
+  &__inner {
+    @include flex-center;
+
+    justify-content: space-between;
+    margin-inline: auto;
+    max-width: rem(1440);
+    padding-left: rem(48);
+    padding-right: rem(28);
+
+    @include laptop {
+      justify-content: inherit;
+      gap: rem(8);
+    }
+  }
+
+  &__nav-list {
+    @include flex-center;
+
+    flex-direction: row;
+    gap: rem(4);
+    line-height: 1.2;
+
+    @include laptop {
+      flex-direction: column;
+    }
+  }
+
+  &__nav-item {
+    @include flex-center;
+
+    margin: rem(14) rem(24);
+    position: relative;
+  }
+
+  &__nav-link {
+    img {
+      margin-left: rem(6);
+    }
+  }
+
+  &__free-start-btn {
+    @include laptop {
+      justify-self: flex-end;
+    }
+  }
+
+  &__overlay {
+    @include flex-center;
+
+    @include laptop-above {
+      display: contents;
+    }
+
+    @include laptop {
+      display: flex;
+      max-width: 40rem;
+      min-width: rem(450);
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 1.5rem;
+
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      padding: 1rem;
+      background-color: var(--white);
+      box-shadow: 0 0 36px -10px #00000040;
+      transition: var(--transition);
+
+      &:not(.is-active) {
+        @include hide;
+        translate: 100%;
+      }
+    }
+  }
+
+  &__buttons {
+    @include flex-center;
+  }
+
+  svg {
+    margin-right: rem(5);
+  }
+}

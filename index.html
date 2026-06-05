@@ -2,7 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
 
     <!-- SEO -->
     <title>%VITE_SITE_TITLE%</title>
@@ -23,23 +26,22 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
+
+    <!-- Main JS -->
+    <script type="module" src="/src/js/main.js" defer></script>
   </head>
 
   <body>
     <!-- Skip-link for accessibility -->
-    <a href="#main" class="skip-link sr-only">Перейти к контенту</a>
+    <a href="#main" class="skip-link visually-hidden">Перейти к контенту</a>
 
     <header class="header" role="banner">
-      <div class="container">
-        <a href="/" class="logo" aria-label="На главную">
-          <img src="src/assets/images/logo.svg" alt="%VITE_SITE_TITLE%" width="160" height="40" />
+      <div class="header__inner">
+        <a href="/" class="logo" aria-label="На главную" title="На главную">
+          <img src="src/assets/icons/logo.svg" alt="%VITE_SITE_TITLE%" width="175" height="36" />
         </a>
 
-        <div class="nav-items">
-          <button class="header__free-start-btn btn btn--primary">
-            <a href="#" class="header__free-start-link">Начать бесплатно</a>
-          </button>
-
+        <div class="header__overlay" id="overlay">
           <nav class="header__nav" id="main-nav" role="navigation" aria-label="Главное меню">
             <ul class="header__nav-list">
               <li class="header__nav-item">
@@ -49,145 +51,179 @@
                 <a href="#" class="header__nav-link">Наше оборудование</a>
               </li>
               <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Связаться с нами</a>
+                <a href="#" class="header__nav-link"
+                  >Смотреть все цены
+                  <img src="src/assets/icons/arrow-down.svg" alt="" />
+                </a>
               </li>
               <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Смотреть все цены ^</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Выбрать план ^</a>
+                <a href="#" class="header__nav-link"
+                  >Выбрать план
+                  <img src="src/assets/icons/arrow-down.svg" alt="" />
+                </a>
               </li>
             </ul>
-            <button class="header__login-btn btn btn--white">
-              <a class="header__login-link" href="#">Войти</a>
-            </button>
           </nav>
-
-          <button
-            href="#"
-            aria-controls="main-nav"
-            aria-label="Открыть меню"
-            aria-expanded="false"
-            class="burger-btn"
-            id="burger-btn"
-          >
-            <span class="sr-only">меню</span>
+          <button class="header__login-btn btn btn--transparent visible-laptop">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+            >
+              <path
+                d="M5.33333 5.33333C6.80667 5.33333 8 4.14 8 2.66667C8 1.19333 6.80667 0 5.33333 0C3.86 0 2.66667 1.19333 2.66667 2.66667C2.66667 4.14 3.86 5.33333 5.33333 5.33333ZM5.33333 6.66667C3.55333 6.66667 0 7.56 0 9.33333V10.6667H10.6667V9.33333C10.6667 7.56 7.11333 6.66667 5.33333 6.66667Z"
+                fill="#323232"
+              />
+            </svg>
+            <a class="header__login-link" href="#">Войти</a>
           </button>
         </div>
+        <div class="header__buttons">
+          <button class="header__login-btn btn btn--transparent hidden-laptop">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+            >
+              <path
+                d="M5.33333 5.33333C6.80667 5.33333 8 4.14 8 2.66667C8 1.19333 6.80667 0 5.33333 0C3.86 0 2.66667 1.19333 2.66667 2.66667C2.66667 4.14 3.86 5.33333 5.33333 5.33333ZM5.33333 6.66667C3.55333 6.66667 0 7.56 0 9.33333V10.6667H10.6667V9.33333C10.6667 7.56 7.11333 6.66667 5.33333 6.66667Z"
+                fill="#323232"
+              />
+            </svg>
+            <a class="header__login-link" href="#">Войти</a>
+          </button>
+          <button class="header__free-start-btn btn btn--white">
+            <a href="#" class="header__free-start-link">Начать бесплатно</a>
+          </button>
+        </div>
+        <button
+          class="header__burger-button burger-button visible-laptop"
+          id="burger-btn"
+          aria-controls="overlay"
+          aria-label="Открыть меню"
+          title="Открыть меню"
+          aria-expanded="false"
+        >
+          <span class="burger-button__line"></span>
+          <span class="burger-button__line"></span>
+        </button>
       </div>
     </header>
 
     <main id="main" role="main">
-      <div class="container">
-        
-      </div>
+      <div class="container"></div>
     </main>
 
     <footer class="footer" role="contentinfo">
       <div class="container">
         <nav class="footer__nav" aria-label="Вспомогательное меню">
-          <ul class="footer__nav-list">
-            <p class="footer__list-label">Типы бизнеса</p>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Ресторан</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Кондитерская</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Кофейня</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Бар</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Кальянная</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Пекарня</a>
-            </li>
-          </ul>
+          <div class="footer__nav-column">
+            <h3 class="footer__nav-title">Типы бизнеса</h3>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Ресторан</a></li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Кондитерская</a>
+              </li>
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Кофейня</a></li>
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Бар</a></li>
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Кальянная</a></li>
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Пекарня</a></li>
+            </ul>
+          </div>
 
-          <ul class="footer__nav-list">
-            <p class="footer__list-label">Другое</p>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Цены и тарифы</a>
-            </li>
-          </ul>
+          <div class="footer__nav-column">
+            <h3 class="footer__nav-title">Другое</h3>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Цены и тарифы</a>
+              </li>
+            </ul>
+          </div>
 
-          <ul class="footer__nav-list">
-            <p class="footer__list-label">Продукты</p>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">POS Терминал</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Маркетинг</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Меню, тех.карты</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Кухонный экран</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Складской учёт</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Анилитика и отчёты</a>
-            </li>
-          </ul>
+          <div class="footer__nav-column">
+            <h3 class="footer__nav-title">Продукты</h3>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">POS Терминал</a>
+              </li>
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Маркетинг</a></li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Меню, тех.карты</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Кухонный экран</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Складской учёт</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link">Аналитика и отчёты</a>
+              </li>
+            </ul>
+          </div>
 
-          <ul class="footer__nav-list">
-            <p class="footer__list-label">Компания</p>
-            <li class="footer__nav-item">
-              <a href="#why-us" class="footer__nav-link">Почему мы</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link">Партнерам</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link footer__nav-link--soon">Карьера</a>
-            </li>
-            <li class="footer__nav-item">
-              <a href="#" class="footer__nav-link footer__nav-link--soon">Блог</a>
-            </li>
-          </ul>
+          <div class="footer__nav-column">
+            <h3 class="footer__nav-title">Компания</h3>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <a href="#why-us" class="footer__nav-link">Почему мы</a>
+              </li>
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link">Партнерам</a></li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link footer__nav-link--soon">Карьера</a>
+              </li>
+              <li class="footer__nav-item">
+                <a href="#" class="footer__nav-link footer__nav-link--soon">Блог</a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <div class="footer__contacts" aria-label="Контакты">
-          <div class="footer__conatcts-card">
-            <a href="tel:78007778967" class="footer__contacts-link">+7 (800) 777-89-67</a>
-          </div>
-          <div class="footer__conatcts-card">
-            <a href="mail:info@absolut.ru" class="footer__contacts-link">info@absolut.ru</a>
-          </div>
+          <a href="tel:+78007778967" class="footer__contacts-card">
+            <span class="footer__contacts-icon footer__contacts-icon--phone"></span>
+            <a class="footer__contacts-text">+7 (800) 777-89-67</a>
+          </a>
+          <a href="mailto:info@absolut.ru" class="footer__contacts-card">
+            <span class="footer__contacts-icon footer__contacts-icon--mail"></span>
+            <a class="footer__contacts-text">info@absolut.ru</a>
+          </a>
         </div>
 
-        <ul class="footer__info">
-          <li class="footer__info-item">
-            <a href="#" class="footer__info-link">Условаия</a>
-          </li>
-          <li class="footer__info-item">
-            <a href="#" class="footer__info-link">Политика конфиденциальности</a>
-          </li>
-          <li class="footer__info-item">Дизайн -
-            <a href="#" class="footer__info-link">REDIS</a>
-          </li>
-          <li class="footer__info-item">Разработка -
-            <a href="#" class="footer__info-link">Salt & Pepper</a>
-          </li>
-        </ul>
+        <div class="footer__bottom">
+          <ul class="footer__info">
+            <li class="footer__info-item">
+              <a href="#" class="footer__info-link">Политика обработки персональных данных</a>
+            </li>
+            <li class="footer__info-item">
+              <a href="#" class="footer__info-link">Пользовательское соглашение</a>
+            </li>
+            <li class="footer__info-item">
+              <span class="footer__info-text">Дизайн — </span>
+              <a href="#" class="footer__info-link">REDIS</a>
+            </li>
+            <li class="footer__info-item">
+              <span class="footer__info-text">Разработка — </span>
+              <a href="#" class="footer__info-link">Salt & Pepper</a>
+            </li>
+          </ul>
 
-        <button class="go-to-top" aria-label="В начало"></button>
+          <button class="footer__to-top" type="button" aria-label="Вернуться наверх">
+            <span class="footer__to-top-icon"></span>
+          </button>
 
-        <div class="footer__copyright">
-          <p>@ A POS <time datetime="2026">2026</time>.</p>
-          <p>Все права защищены</p>
+          <div class="footer__copyright">
+            <p class="footer__copyright-text">
+              © ООО «А ПОС» ("ABSOLUT POS" LLC) <time datetime="2026">2026</time>
+            </p>
+            <p class="footer__copyright-text">Все права защищены</p>
+          </div>
         </div>
       </div>
     </footer>
-
-    <!-- Main JS -->
-    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

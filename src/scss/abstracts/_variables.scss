@@ -1,26 +1,22 @@
-// Typography
-$font-family: "TT Hoves";
-$second-family: "Inter";
+:root {
+  --white: #fff;
+  --black: #000;
 
-// Colors
-$green: #e5fbe2;
-$orange: #ffe9da;
-$blue: #d9e1ff;
-$black: #000;
-$gray: #f2f4f7;
-$dark-gray: rgba(0, 0, 0, 0.6);
-$light-gray: rgba(0, 0, 0, 0.45);
-$white: #fff;
+  --gray-20: rgba(0, 0, 0, 0.45);
+  --gray-50: #f2f4f7;
+  --gray-80: rgba(0, 0, 0, 0.6);
 
-// Breakpoints
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+  --green: #e5fbe2;
+  --orange: #ffe9da;
+  --blue: #d9e1ff;
 
-// Decor
-$transition: all 0.5s ease-in-out;
+  --orange-hover: #FF7F3F;
+
+  --font-family: "TT Hoves", sans-serif;
+  --second-family: "Inter", sans-serif;
+
+  --container-width: rem(1360);  
+  --container-padding-x: rem(16);
+
+  --transition: all 0.2s;
+}

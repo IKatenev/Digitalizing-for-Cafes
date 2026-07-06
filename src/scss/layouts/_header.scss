@@ -2,14 +2,13 @@
 @use "../utilities" as *;
 
 .header {
-  margin-top: rem(28);
   white-space: nowrap;
 
   &__inner {
     @include flex-center;
 
     justify-content: space-between;
-    margin-inline: auto;
+    margin: rem(27) auto rem(24);
     max-width: rem(1440);
     padding-left: rem(48);
     padding-right: rem(28);
@@ -17,6 +16,15 @@
     @include laptop {
       justify-content: inherit;
       gap: rem(8);
+    }
+    @include mobile {
+      padding: 0 rem(12);
+    }
+  }
+
+  &__nav {
+    @include laptop-above {
+      margin-right: rem(75);
     }
   }
 
@@ -42,10 +50,25 @@
   &__nav-link {
     img {
       margin-left: rem(6);
+      margin-right: rem(-3);
     }
   }
 
   &__free-start-btn {
+    @include laptop-above {
+      background-color: var(--white);
+      font-weight: 500;
+
+      a {
+        color: var(--black);
+      }
+
+      &:hover {
+        a {
+          color: var(--orange-hover);
+        }
+      }
+    }
     @include laptop {
       justify-self: flex-end;
     }
@@ -65,20 +88,25 @@
       flex-direction: column;
       justify-content: center;
       row-gap: 1.5rem;
-
       position: fixed;
       top: 0;
       bottom: 0;
       right: 0;
       padding: 1rem;
       background-color: var(--white);
-      box-shadow: 0 0 36px -10px #00000040;
       transition: var(--transition);
+      z-index: 10;
 
       &:not(.is-active) {
         @include hide;
+
         translate: 100%;
       }
+    }
+
+    @include mobile {
+      max-width: none;
+      min-width: 100%;
     }
   }
 

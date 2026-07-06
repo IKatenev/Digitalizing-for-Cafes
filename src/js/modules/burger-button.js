@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function initBurger() {
   const burgerBtn = document.getElementById("burger-btn");
   const overlay = document.getElementById("overlay");
 
@@ -46,4 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
       closeMenu();
     }
   });
-});
+}

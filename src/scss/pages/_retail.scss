@@ -1,0 +1,1842 @@
+@use "../abstracts" as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: rem(66) rem(16) rem(105.5);
+  max-height: fit-content;
+
+  @include laptop {
+    padding: rem(40) rem(16) rem(80);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: rem(1020);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  &__label {
+    font-family: var(--font-family);
+    font-size: rem(24);
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--gray-80);
+    margin-bottom: rem(24);
+
+    @include laptop {
+      font-size: rem(16);
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+
+    @include fluid-text(90, 48);
+
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    margin: 0 0 rem(24);
+
+    @include laptop {
+      @include fluid-text(90, 40);
+
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-family);
+
+    @include fluid-text(30, 18);
+
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--gray-20);
+    margin: 0 0 rem(40);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  a.hero__link {
+    font-family: var(--font-family);
+    font-size: rem(14);
+    font-weight: 400;
+    color: var(--gray-80);
+    text-underline-offset: rem(2);
+    text-decoration: underline;
+
+    @include hover {
+      color: var(--orange-hover);
+    }
+  }
+
+  &__pills {
+    position: relative;
+    z-index: 1;
+    margin-top: rem(80);
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+    padding: rem(4);
+    border-radius: rem(50);
+    background: rgb(255 255 255 / 90%);
+
+    @include laptop {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: rem(48);
+      border-radius: rem(24);
+      background: transparent;
+      gap: rem(8);
+      padding: 0;
+    }
+  }
+
+  &__pill {
+    display: inline-flex;
+    align-items: center;
+    padding: rem(12) rem(20);
+    border-radius: rem(30);
+    font-family: var(--font-family);
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
+    color: var(--black);
+    min-height: rem(48);
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    &--active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    @include laptop {
+      font-size: rem(14);
+      padding: rem(8) rem(16);
+      min-height: rem(36);
+      border-radius: rem(20);
+      background: rgb(255 255 255 / 80%);
+
+      &--active {
+        background: var(--black);
+      }
+    }
+  }
+}
+
+.hero-divider {
+  display: block;
+  height: rem(64);
+  background: var(--white);
+  border-radius: rem(32) rem(32) 0 0;
+  z-index: 1;
+}
+
+// Section: About POS
+.about-pos {
+  background: var(--white);
+  padding: 0 rem(40);
+  min-height: rem(600);
+
+  @include tablet {
+    padding: 0 rem(16);
+    min-height: auto;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    max-width: rem(1360);
+    margin: 0 auto;
+    min-height: rem(600);
+
+    @include tablet {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      min-height: auto;
+      padding: 0;
+      gap: rem(32);
+    }
+  }
+
+  &__text {
+    flex: 0 1 rem(670);
+    max-width: rem(670);
+
+    > * {
+      max-width: rem(440);
+    }
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+
+      > * {
+        max-width: none;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 rem(126);
+    @include fluid-text(52, 28);
+
+    @include tablet {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    font-family: var(--font-family);
+
+    @include fluid-text(36, 28);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: rgb(0 0 0 / 45%);
+  }
+
+  &__media {
+    max-width: rem(670);
+    border-radius: rem(48);
+    overflow: hidden;
+    position: relative;
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+      border-radius: rem(24);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: rem(600);
+    object-fit: cover;
+
+    @include tablet {
+      height: auto;
+      min-height: rem(320);
+    }
+  }
+
+  &__play {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include square(rem(120));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 90%);
+    cursor: pointer;
+    transition: var(--transition);
+
+    @include hover {
+      background: var(--white);
+      transform: scale(1.05);
+    }
+
+    svg {
+      @include square(rem(56));
+
+      display: block;
+      margin: rem(32);
+    }
+
+    @include tablet {
+      @include square(rem(80));
+
+      bottom: rem(16);
+      right: rem(16);
+
+      svg {
+        @include square(rem(40));
+
+        margin: rem(20);
+      }
+    }
+  }
+}
+
+// Divider
+.divider {
+  background: var(--white);
+  height: rem(128);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    height: rem(64);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(1);
+    background: var(--gray-30);
+  }
+}
+
+// Section: Features
+.features {
+  background: var(--white);
+  padding: 0 rem(40);
+  min-height: rem(494);
+
+  @include tablet {
+    padding: 0 rem(16);
+    min-height: auto;
+  }
+
+  &__inner {
+    display: flex;
+    gap: rem(20);
+    max-width: rem(1360);
+    margin: 0 auto;
+
+    @include laptop {
+      flex-direction: column;
+      gap: rem(40);
+    }
+  }
+
+  &__intro {
+    flex: 0 0 rem(324);
+    max-width: rem(324);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include laptop {
+      flex: none;
+      max-width: none;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin: 0;
+
+    @include laptop {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(20, 16);
+
+    margin: 0;
+    line-height: 1.2;
+    color: var(--gray-20);
+  }
+
+  &__cards {
+    flex: 1;
+    display: flex;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: rem(494);
+    padding: rem(32);
+    border-radius: rem(40);
+
+    @include tablet {
+      min-height: rem(380);
+      padding: rem(24);
+    }
+
+    &--blue {
+      background: var(--blue);
+    }
+
+    &--purple {
+      background: var(--purple);
+    }
+
+    &--peach {
+      background: var(--orange);
+    }
+  }
+
+  &__card-badge {
+    @include square(rem(80));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("/src/assets/icons/hexagon-white.svg") no-repeat center;
+    border-radius: rem(15);
+  }
+
+  &__card-number {
+    font-weight: 500;
+    font-size: rem(27);
+    line-height: 0.8;
+    text-align: center;
+  }
+
+  &__card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-top: rem(32);
+
+    @include tablet {
+      margin-top: rem(20);
+    }
+  }
+
+  &__card-title {
+    margin: 0 0 rem(16);
+    font-size: rem(36);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--black);
+
+    @include tablet {
+      font-size: rem(28);
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__card-desc {
+    margin: 0;
+    font-size: rem(20);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--gray-20);
+
+    @include tablet {
+      font-size: rem(16);
+    }
+  }
+}
+
+// Section: Testimonials Features (Почему магазины выбирают Absolut POS)
+.testimonials-features {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin: 0 auto rem(64);
+    text-align: center;
+
+    @include tablet {
+      text-align: inherit;
+    }
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: rem(20);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include tablet {
+      gap: rem(16);
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: rem(40);
+    background: var(--gray-50);
+    overflow: hidden;
+    min-height: rem(550);
+    min-width: rem(300);
+    user-select: none;
+
+    @include tablet {
+      min-height: rem(420);
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(24) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+  }
+
+  &__card-header {
+    padding: rem(32) rem(40) 0 rem(32);
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+
+    @include tablet {
+      padding: rem(24) rem(24) 0;
+      gap: rem(16);
+    }
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+  }
+
+  &__card-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: rem(16);
+    padding: 0 rem(40) rem(32) rem(32);
+    min-height: rem(144);
+
+    @include tablet {
+      padding: rem(16) rem(24) rem(24);
+      min-height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__card-desc {
+    @include fluid-text(20, 16);
+    line-height: 1.2;
+    color: var(--gray-20);
+  }
+}
+
+// Section: Testimonial CTA
+.testimonial-cta {
+  background: var(--white);
+  padding: rem(64) rem(40);
+
+  @include tablet {
+    padding: rem(48) rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__card {
+    position: relative;
+    border-radius: rem(40);
+    overflow: hidden;
+    min-height: rem(550);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: rem(40);
+
+    @include tablet {
+      flex-direction: column;
+      min-height: auto;
+      padding: rem(32);
+      border-radius: rem(24);
+      gap: rem(32);
+    }
+
+    @include mobile {
+      padding: rem(24);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: url("/src/assets/images/Customer-image-1.jpg") center / cover no-repeat;
+    z-index: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: rem(615);
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+    }
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: rem(12) rem(16);
+    margin-bottom: rem(24);
+    border-radius: rem(35);
+    background: var(--white);
+    font-weight: 500;
+    font-size: rem(12);
+    line-height: 1;
+    letter-spacing: normal;
+
+    @include mobile {
+      padding: rem(8) rem(12);
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__quote {
+    margin: 0 0 auto 0;
+
+    @include tablet {
+      margin-bottom: rem(98);
+    }
+
+    p {
+      @include fluid-text(36, 28);
+      margin: 0;
+      line-height: 1.2;
+      color: var(--white);
+    }
+  }
+
+  &__author {
+    @include fluid-text(20, 16);
+    font-style: normal;
+    line-height: 1.2;
+    color: var(--white);
+    justify-self: flex-end;
+
+    @include mobile {
+      line-height: 1.3;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  &__stats {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+    padding-top: rem(24);
+
+    @include tablet {
+      align-self: stretch;
+      align-items: flex-end;
+      padding-top: 0;
+    }
+  }
+}
+
+// Section: Retail Types (Absolut POS подходит любому типу ритейла)
+.retail-types {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(64);
+    position: relative;
+
+    @include tablet {
+      justify-content: start;
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin: 0;
+    max-width: rem(707);
+  }
+
+  &__cards {
+    display: flex;
+    gap: rem(20);
+    min-width: rem(380);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: rem(40);
+    padding: rem(32);
+    min-height: rem(480);
+    min-width: rem(300);
+
+    @include tablet {
+      border-radius: rem(24);
+      padding: rem(24);
+      min-height: auto;
+    }
+
+    &--orange {
+      background: var(--orange);
+    }
+
+    &--green {
+      background: var(--green);
+    }
+
+    &--blue {
+      background: var(--blue);
+    }
+
+    &--purple {
+      background: var(--purple);
+    }
+  }
+
+  &__card-icon {
+    @include square(rem(80));
+    @include flex-center;
+    margin-bottom: rem(24);
+    background: url("/src/assets/icons/hexagon-white.svg") center no-repeat;
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+    margin: 0 0 auto;
+  }
+
+  &__card-desc {
+    @include fluid-text(20, 16);
+    margin: 0;
+    line-height: 1.3;
+    color: var(--gray-20);
+  }
+}
+
+// Section: Equipment (Принимайте лучшие бизнес-решения на основе данных)
+.equipment {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: rem(64);
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: rem(40);
+      text-align: inherit;
+    }
+
+    @include mobile {
+      text-align: inherit;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin: 0 auto rem(40);
+
+    @include tablet {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(36, 28);
+    margin: 0 auto;
+    max-width: rem(724);
+    color: var(--gray-20);
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: rem(40);
+    background: var(--gray-50);
+    padding: rem(32);
+    min-height: rem(680);
+    position: relative;
+    user-select: none;
+
+    @include tablet {
+      min-height: auto;
+      padding: rem(24);
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+  }
+
+  &__card-preview {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: rem(16);
+    margin-bottom: rem(20);
+    background: var(--white);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include tablet {
+      width: rem(300);
+    }
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+
+  &__card-header {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+    margin-bottom: rem(20);
+  }
+
+  &__card-icon {
+    @include square(rem(48));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--black);
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+    margin: 0;
+  }
+
+  &__card-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: end;
+    gap: rem(10);
+    margin-bottom: rem(64);
+
+    @include tablet {
+      margin-bottom: 0;
+      gap: rem(8);
+    }
+  }
+
+  &__card-feature {
+    @include fluid-text(20, 16);
+    display: flex;
+    align-items: center;
+    gap: rem(14);
+    line-height: 1.2;
+    color: var(--gray-20);
+
+    @include tablet {
+      gap: rem(8);
+    }
+
+    svg {
+      flex-shrink: 0;
+      color: var(--gray-20);
+    }
+  }
+
+  &__card-btn {
+    @include square(rem(48));
+    @include flex-center;
+    background: url("/src/assets/icons/hexagon-white.svg") center no-repeat;
+    background-size: rem(46);
+
+    position: absolute;
+    right: rem(32);
+    bottom: rem(32);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+
+    @include tablet {
+      right: rem(24);
+      bottom: rem(24);
+    }
+
+    @include hover {
+      color: var(--white);
+    }
+  }
+}
+
+// Section: Pricing (Выберите свой тариф)
+.pricing {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+    display: flex;
+    gap: rem(40);
+
+    @include laptop {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    width: rem(324);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin: 0 0 rem(24);
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__desc {
+    @include fluid-text(20, 16);
+    margin: auto 0 rem(16);
+    line-height: 1.2;
+    color: var(--gray-20);
+    text-wrap-style: pretty;
+
+    @include tablet {
+      margin: rem(24) 0;
+    }
+  }
+
+  &__link {
+    font-size: rem(20);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: underline !important;
+    text-underline-offset: rem(2);
+    transition: var(--transition);
+  }
+
+  &__cards {
+    flex: 1;
+    display: flex;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: rem(40);
+    padding: rem(32);
+    min-height: rem(470);
+
+    @include tablet {
+      border-radius: rem(24);
+      min-height: auto;
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+
+    &--base {
+      background: var(--gray-50);
+    }
+
+    &--plus {
+      background: var(--green);
+    }
+
+    &--business {
+      background: var(--orange);
+    }
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+    margin: 0 0 rem(16);
+  }
+
+  &__card-desc {
+    margin: 0 0 rem(32);
+    font-size: rem(14);
+    line-height: 1.3;
+    color: var(--gray-20);
+  }
+
+  &__card-price {
+    display: block;
+    margin: 0 0 auto;
+    font-size: rem(48);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--black);
+
+    @include tablet {
+      margin-bottom: rem(24);
+    }
+
+    .pricing__card--business & {
+      font-size: rem(32);
+    }
+  }
+
+  &__card-features {
+    list-style: none;
+    margin: 0 0 rem(16);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+  }
+
+  &__card-feature {
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+    font-family: var(--font-family);
+    font-size: rem(14);
+    line-height: 1.3;
+
+    svg {
+      flex-shrink: 0;
+      stroke-width: 1px;
+      stroke: #000;
+    }
+  }
+
+  &__card-btn {
+    align-self: flex-start;
+  }
+}
+
+// Section: CTA (Попробуйте бесплатно)
+.cta {
+  background: var(--white);
+  padding: rem(64) rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+
+    @include tablet {
+      padding: rem(48) 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    min-height: rem(650);
+    border-radius: rem(40);
+    background: linear-gradient(40deg, #b9e6ff 1.41%, #e3f2ff 50.52%, #dff4ff 100%);
+    overflow: hidden;
+
+    @include tablet {
+      border-radius: rem(32);
+      min-height: rem(600);
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: rem(110);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--black);
+    z-index: 2;
+
+    @include tablet {
+      font-size: rem(72);
+    }
+
+    @include mobile {
+      font-size: rem(56);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(20, 16);
+
+    position: relative;
+    z-index: 2;
+    margin: rem(114) auto rem(40);
+    max-width: rem(320);
+    line-height: 1.2;
+    color: var(--gray-20);
+    text-align: center;
+
+    @include tablet {
+      margin: rem(112) auto rem(24);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 2;
+    left: 58%;
+    top: 69%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(142);
+    height: rem(142);
+    border: none;
+    border-radius: 50%;
+    background: var(--black);
+    mix-blend-mode: difference;
+    filter: invert(100%);
+    cursor: pointer;
+    transition: var(--transition);
+
+    @include hover {
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 rem(8) rem(32) rgb(255 255 255 / 15%);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.97);
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__btn-text {
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--white);
+    text-align: center;
+  }
+
+  &__btn-tablet {
+    @include tablet-above {
+      display: none;
+    }
+
+    z-index: 2;
+    margin-bottom: rem(24);
+  }
+
+  &__decor {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+
+    &--1 {
+      background: url("/src/assets/images/glass_1.png") no-repeat;
+      background-size: rem(650);
+      width: rem(650);
+      height: rem(650);
+      left: -1%;
+      bottom: -8%;
+
+      @include tablet {
+        left: -20%;
+      }
+
+      @include mobile {
+        background: url("/src/assets/images/glass_tablet-bottom.png") no-repeat;
+        background-size: rem(750);
+        width: rem(750);
+        height: rem(750);
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: -36%;
+      }
+    }
+
+    &--2 {
+      background: url("/src/assets/images/glass_2.png") no-repeat;
+      background-size: rem(450);
+      width: rem(450);
+      height: rem(450);
+      left: 67%;
+      top: -3%;
+
+      @include mobile {
+        background: url("/src/assets/images/glass_tablet-top.png") no-repeat;
+        background-size: rem(750);
+        width: rem(750);
+        height: rem(750);
+        transform: translateX(-50%);
+        // transform: scale(2);
+        left: 50%;
+        top: -36%;
+      }
+    }
+  }
+}
+
+// Section: How to start (Как начать работать с Absolut POS)
+.how-to-start {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: rem(64);
+
+    @include tablet {
+      margin-bottom: rem(40);
+      text-align: inherit;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    max-width: rem(668);
+  }
+
+  &__subtitle {
+    margin: 0;
+    max-width: rem(668);
+    font-family: var(--font-family);
+    font-size: rem(36);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: rgb(0 0 0 / 45%);
+
+    @include tablet {
+      font-size: rem(28);
+    }
+
+    @include mobile {
+      font-size: rem(24);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: rem(20);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+    @include tablet {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: rem(320);
+    min-width: rem(300);
+    padding: rem(32);
+    background: var(--gray-50);
+    border-radius: rem(40);
+
+    @include tablet {
+      min-height: rem(320);
+      padding: rem(24);
+      border-radius: rem(28);
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+  }
+
+  &__badge {
+    @include square(rem(80));
+    @include flex-center;
+
+    &--orange {
+      background: url("/src/assets/icons/hexagon-orange.svg") center no-repeat;
+    }
+
+    &--pink {
+      background: url("/src/assets/icons/hexagon-pink.svg") center no-repeat;
+    }
+
+    &--blue {
+      background: url("/src/assets/icons/hexagon-blue.svg") center no-repeat;
+    }
+
+    &--green {
+      background: url("/src/assets/icons/hexagon-green.svg") center no-repeat;
+    }
+  }
+
+  &__badge-number {
+    font-weight: 500;
+    font-size: rem(27);
+    line-height: 0.8;
+
+    @include tablet {
+      font-size: rem(20);
+    }
+  }
+
+  &__card-text {
+    @include fluid-text(29, 22);
+    line-height: 1.1;
+    color: var(--gray-20);
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}
+
+// Section: Support Contacts (Возникли вопросы)
+.support-contacts {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: rem(1360);
+    margin: 0 auto;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: rem(40);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: rem(670);
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+
+    margin: 0 0 rem(56);
+    max-width: rem(440);
+    line-height: 1.1;
+    @include tablet {
+      margin-bottom: rem(32);
+      max-width: none;
+    }
+
+    @include mobile {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(36, 28);
+    margin: 0;
+    max-width: rem(440);
+    line-height: 1.1;
+    color: var(--gray-20);
+
+    @include tablet {
+      max-width: none;
+    }
+  }
+
+  &__cards {
+    flex: 1 1 rem(670);
+    max-width: rem(670);
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: rem(32);
+    border-radius: rem(40);
+    background: var(--gray-50);
+    position: relative;
+    transition: var(--transition);
+
+    @include tablet {
+      border-radius: rem(28);
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+  }
+
+  &__card-icon {
+    @include square(rem(64));
+    @include flex-center;
+
+    flex-shrink: 0;
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+    width: 100%;
+    margin-top: rem(40);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+// Section: Form
+.form {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+    display: flex;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__info {
+    flex: 0 2 rem(670);
+    max-width: rem(670);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    max-width: rem(440);
+
+    @include tablet {
+      max-width: none;
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(20, 16);
+    margin: 0;
+    max-width: rem(440);
+    line-height: 1.2;
+    color: var(--gray-20);
+
+    @include tablet {
+      max-width: none;
+      margin-bottom: rem(88);
+    }
+  }
+
+  &__fields {
+    flex: 0 1 rem(670);
+    max-width: rem(670);
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    @include tablet {
+      flex: none;
+      max-width: none;
+      gap: rem(12);
+    }
+  }
+
+  &__row {
+    &--dual {
+      display: flex;
+      gap: rem(20);
+
+      @include tablet {
+        flex-direction: column;
+        gap: rem(12);
+      }
+    }
+
+    &--bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: rem(95);
+
+      @include tablet {
+        gap: rem(12);
+        margin-top: rem(28);
+      }
+    }
+  }
+
+  &__field {
+    display: block;
+    flex: 1;
+    padding: rem(21) rem(32) rem(24);
+    border-radius: rem(40);
+    background: var(--gray-50);
+    cursor: text;
+    position: relative;
+
+    &:focus-within {
+      border: 1px solid #000;
+      background: var(--white);
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: rem(20);
+      line-height: 1.2;
+      color: var(--black);
+      outline: none;
+
+      &::placeholder {
+        color: var(--gray-20);
+        user-select: none;
+      }
+    }
+
+    &--error {
+      border: 2px solid #ff4444;
+
+      &:focus {
+        border: 2px solid #ff4444;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: rem(12);
+    cursor: pointer;
+
+    input {
+      @include visually-hidden;
+
+      &:checked + .form__checkmark {
+        background: var(--black);
+        border-color: var(--black);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__checkmark {
+    @include square(rem(24));
+    flex-shrink: 0;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    position: relative;
+    margin-top: rem(2);
+    transition: var(--transition);
+
+    &::after {
+      content: "";
+      @include square(rem(8));
+      border-radius: 50%;
+      background: var(--white);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      opacity: 0;
+      transition: var(--transition);
+    }
+  }
+
+  &__checkbox-text {
+    @include fluid-text(20, 16);
+    line-height: 1.2;
+    user-select: none;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      @include hover {
+        color: var(--orange-hover);
+      }
+    }
+
+    @include mobile {
+      font-size: rem(16);
+    }
+  }
+
+  &__submit {
+    @include fluid-text(20, 16);
+    color: var(--white);
+    padding: rem(20) rem(36) rem(24);
+    border-radius: rem(46);
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__message {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+
+    &--success {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+
+    &--error {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+    }
+  }
+
+  &__field--error input {
+    border-color: #ff4444 !important;
+  }
+}

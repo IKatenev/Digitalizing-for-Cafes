@@ -1,6 +1,6 @@
 ---
-name: figma-design-to-code
-description: Convert Figma design to code
+name: design-to-code
+description: Convert Figma design to high quality code
 ---
 
 ## 1. ROLE AND OBJECTIVE

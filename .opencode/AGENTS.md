@@ -1,51 +1,58 @@
-# Project Overview
+# Digitalizing-for-Cafes
 
-Mult-page website built with:
+Multi-page Russian-language landing site for a cafe POS system. Built with **Vite + SCSS + vanilla JS**.
 
-- HTML
-- SCSS
-- Vanilla JavaScript
-- Vite
+## Quick start
 
-# Code should be:
+```bash
+npm run dev       # dev server at http://127.0.0.1:5173 (opens browser)
+npm run build     # outputs to dist/
+npm run preview   # preview build at http://127.0.0.1:5174
+```
 
-- readable
-- simple
-- maintainable
+## Lint, format, typecheck
 
-## Styling conventions:
+Run `npm run lint:fix` before committing (eslint + stylelint + prettier in one step).
 
-- Use BEM methodology for CSS classes
-- One responsibility per block
-- Elements use block__element
-- Variations use block--modifier
+| Command | What it does |
+|---|---|
+| `npm run lint` | eslint `.` + stylelint `**/*.{css,scss}` |
+| `npm run lint:fix` | eslint --fix + stylelint --fix + prettier --write |
 
-# Development Preferences
+There is no typecheck step (vanilla JS).
 
-- Prefer simple solutions over clever solutions
-- Avoid unnecessary abstractions
-- Avoid introducing libraries unless requested
-- Use semantic HTML
-- Use REM instead of px when appropriate
-- Use modern CSS features when appropriate
-- Use ES6+ JavaScript
+## Architecture
+
+- **Entrypoint**: `src/js/main.js` — imports SCSS, preloads fonts, loads JS modules
+- **CSS**: SCSS with BEM, structured as: `abstracts` → `base` → `pages` → `layouts` → `components` → `utilities` (order enforced in `src/scss/main.scss`)
+- **JS**: `src/js/modules/` — one file per feature (e.g. `burger-button.js`)
+- **`@` alias** maps to `/src`
+- **Env vars** (`.env`): `VITE_SITE_TITLE`, `VITE_SITE_DESC`, `VITE_SITE_URL`, `VITE_OG_IMAGE` — referenced in `index.html` as `%VITE_*%` via `vite-plugin-html`
+- **Fonts**: TT Hoves (headings) and Inter (body), preloaded in JS via `?url` import
+
+## Tests
+
+Tests use Playwright. Run with `--headed` flag (visible browser):
+
+```bash
+npm run test:chrome
+npm run test:firefox
+npm run test:safari
+```
+
+## Style conventions
+
+- BEM: `.block__element--modifier`
+- SCSS with `@use` (not `@import`)
 - Desktop-first responsive design
+- No external JS/CSS libraries unless requested
+- Prefer semantic HTML and modern CSS
+- *IMPORTANT* Always try to reuse existing elements, variables, components as much as possible for convinience
 
-# When Modifying Code
+## Figma
 
-Before making significant changes:
-1. Explain the problem
-2. Explain the proposed solution
-3. Then generate code
+Design-to-code workflow available via MCP (`@vkhanhqui/figma-mcp-go`). See `.opencode/skills/design-to-code/`.
 
-# Refactoring
+## Output rules
 
-Prefer small incremental refactors over complete rewrites
-
-# Debugging
-
-When fixing bugs:
-
-1. Identify root cause
-2. Explain why it happens
-3. Provide minimal fix
+Never use comments and explanations until I asked

@@ -6,27 +6,22 @@
 
   padding-inline: rem(24);
   padding-top: rem(12);
-  padding-bottom: rem(14);
-
+  padding-bottom: rem(13.5);
   border: none;
   border-radius: rem(30);
+  color: var(--white);
   background-color: var(--black);
-
   font-size: 1rem;
   font-weight: 400;
-
-  transition: var(--transition);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   cursor: pointer;
-
   text-wrap: nowrap;
-
-  a {
-    text-decoration: none;
-    color: var(--white);
-  }
+  transition: var(--transition);
 
   &:hover {
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    color: var(--orange-hover);
+    box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
   }
 
   &:hover,
@@ -40,41 +35,36 @@
     transform: scale(0.98);
     transition: var(--transition);
   }
-
+  
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
 
   &--white {
+    color: var(--black);
     background-color: var(--white);
     font-weight: 500;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-
-    a {
-      color: var(--black);
-    }
 
     &:hover {
-      a {
-        color: var(--orange-hover);
-      }
+      color: var(--orange-hover);
     }
   }
+
   &--transparent {
     background-color: transparent;
+    box-shadow: none;
     font-weight: 500;
-
-    a {
-      color: var(--black);
-    }
+    color: var(--black);
 
     &:hover {
-      box-shadow: none;
-
-      a {
-        color: var(--orange-hover);
-      }
+      color: var(--orange-hover);
     }
+  }
+
+  @include mobile-s {
+    padding-inline: rem(16);
+    padding-top: rem(11);
+    padding-bottom: rem(12.5);
   }
 }

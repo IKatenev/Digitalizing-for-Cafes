@@ -1,11 +1,12 @@
 @charset "UTF-8";
+
 /* 1) Core: переменные, функции, миксины */
 :root {
   --white: #fff;
   --black: #000;
-  --gray-20: rgba(0, 0, 0, 0.45);
+  --gray-20: rgb(0 0 0 / 45%);
   --gray-50: #f2f4f7;
-  --gray-80: rgba(0, 0, 0, 0.6);
+  --gray-80: rgb(0 0 0 / 60%);
   --green: #e5fbe2;
   --orange: #ffe9da;
   --blue: #d9e1ff;
@@ -18,21 +19,25 @@
 }
 
 /* 2) Base: глобальные стили (reset, root vars, типографика) */
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 /* Document
    ========================================================================== */
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
   line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  text-size-adjust: 100%; /* 2 */
   scrollbar-gutter: stable;
 }
 
 /* Sections
    ========================================================================== */
+
 /**
  * Remove the margin in all browsers.
  */
@@ -58,6 +63,7 @@ h1 {
 
 /* Grouping content
    ========================================================================== */
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -79,6 +85,7 @@ pre {
 
 /* Text-level semantics
    ========================================================================== */
+
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -95,9 +102,8 @@ a:where([class]) {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
+  border-bottom: none; /* 1 */ /* 2 */
+  text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
 }
 
@@ -149,6 +155,7 @@ sup {
 
 /* Embedded content
    ========================================================================== */
+
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -158,6 +165,7 @@ img {
 
 /* Forms
    ========================================================================== */
+
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -199,21 +207,21 @@ select { /* 1 */
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -moz-appearance: button;
-       appearance: button;
-  -webkit-appearance: button;
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+       appearance: auto;
+  appearance: button;
 }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -222,9 +230,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -268,8 +276,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -277,8 +285,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -286,18 +294,18 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
-  -moz-appearance: textfield;
+[type="search"] {
+  appearance: textfield;
        appearance: textfield; /* 1 */
-  -webkit-appearance: textfield; /* 1 */
+  appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
+[type="search"]::-webkit-search-decoration {
+  appearance: none;
 }
 
 /**
@@ -305,12 +313,13 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
+  appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
 /* Interactive
    ========================================================================== */
+
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -327,6 +336,7 @@ summary {
 
 /* Misc
    ========================================================================== */
+
 /**
  * Add the correct display in IE 10+.
  */
@@ -401,7 +411,9 @@ input, textarea, select, button {
 }
 
 /* 1) Core: переменные, функции, миксины */
+
 /* 1) Core: переменные, функции, миксины */
+
 /* 1) Core: переменные, функции, миксины */
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
@@ -462,47 +474,59 @@ input, textarea, select, button {
   cursor: pointer;
   text-wrap: nowrap;
 }
+
 .btn a {
   text-decoration: none;
   color: var(--white);
 }
+
 .btn:hover {
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
 }
+
 .btn:hover, .btn:focus {
   transition: var(--transition);
   opacity: 0.85;
   outline: none;
 }
+
 .btn:active {
   transform: scale(0.98);
   transition: var(--transition);
 }
+
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
 .btn--white {
   background-color: var(--white);
   font-weight: 500;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
 }
+
 .btn--white a {
   color: var(--black);
 }
+
 .btn--white:hover a {
   color: var(--orange-hover);
 }
+
 .btn--transparent {
   background-color: transparent;
   font-weight: 500;
 }
+
 .btn--transparent a {
   color: var(--black);
 }
+
 .btn--transparent:hover {
   box-shadow: none;
 }
+
 .btn--transparent:hover a {
   color: var(--orange-hover);
 }
@@ -512,9 +536,9 @@ input, textarea, select, button {
   margin-top: 1.75rem;
   white-space: nowrap;
 }
+
 .header__inner {
   display: flex;
-  justify-content: center;
   align-items: center;
   justify-content: space-between;
   margin-inline: auto;
@@ -522,12 +546,14 @@ input, textarea, select, button {
   padding-left: 3rem;
   padding-right: 1.75rem;
 }
+
 @media (width <= 90.06125rem) {
   .header__inner {
     justify-content: inherit;
     gap: 0.5rem;
   }
 }
+
 .header__nav-list {
   display: flex;
   justify-content: center;
@@ -536,11 +562,13 @@ input, textarea, select, button {
   gap: 0.25rem;
   line-height: 1.2;
 }
+
 @media (width <= 90.06125rem) {
   .header__nav-list {
     flex-direction: column;
   }
 }
+
 .header__nav-item {
   display: flex;
   justify-content: center;
@@ -548,24 +576,29 @@ input, textarea, select, button {
   margin: 0.875rem 1.5rem;
   position: relative;
 }
+
 .header__nav-link img {
   margin-left: 0.375rem;
 }
+
 @media (width <= 90.06125rem) {
   .header__free-start-btn {
     justify-self: flex-end;
   }
 }
+
 .header__overlay {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 @media (width > 90.06125rem) {
   .header__overlay {
     display: contents;
   }
 }
+
 @media (width <= 90.06125rem) {
   .header__overlay {
     display: flex;
@@ -580,20 +613,23 @@ input, textarea, select, button {
     right: 0;
     padding: 1rem;
     background-color: var(--white);
-    box-shadow: 0 0 36px -10px rgba(0, 0, 0, 0.2509803922);
+    box-shadow: 0 0 36px -10px rgb(0 0 0 / 25.1%);
     transition: var(--transition);
   }
+
   .header__overlay:not(.is-active) {
     opacity: 0;
     visibility: hidden;
     translate: 100%;
   }
 }
+
 .header__buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .header svg {
   margin-right: 0.3125rem;
 }
@@ -615,8 +651,9 @@ input, textarea, select, button {
   background-color: var(--white);
   border: none;
   border-radius: 50%;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
 }
+
 .burger-button__line {
   display: block;
   width: 1.25rem;
@@ -625,23 +662,29 @@ input, textarea, select, button {
   transition: var(--transition);
   cursor: pointer;
 }
+
 .burger-button.is-active {
   gap: 0;
 }
+
 .burger-button.is-active .burger-button__line:first-child {
   rotate: 45deg;
 }
+
 .burger-button.is-active .burger-button__line:last-child {
   rotate: -45deg;
 }
+
 @media (width <= 90.06125rem) {
   .burger-button {
     justify-self: flex-end;
   }
 }
+
 .burger-button[aria-label] {
   position: relative;
 }
+
 .burger-button[aria-label]::before {
   position: absolute;
   top: 50%;
@@ -658,22 +701,23 @@ input, textarea, select, button {
   background-color: var(--blue);
   padding-top: 2.5rem;
 }
+
 .footer__nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
   margin-bottom: 4rem;
   gap: 1.25rem;
 }
+
 .footer__nav-title {
   font-size: 14px;
   letter-spacing: -0.01em;
   color: var(--gray-20);
   margin-bottom: 1rem;
 }
+
 .footer__nav-link {
   font-family: var(--font-family);
   font-weight: 400;
@@ -681,13 +725,14 @@ input, textarea, select, button {
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
+
 .footer__contacts {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1.25rem;
   justify-content: space-between;
 }
+
 .footer__contacts-card {
   display: flex;
   flex-grow: 1;
@@ -695,12 +740,14 @@ input, textarea, select, button {
   padding: 1.5rem;
   border-radius: 2rem;
 }
+
 .footer__contacts-text {
   font-size: clamp(1.75rem, 1.5833333333rem + 0.7407407407vw, 2.25rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
+
 @font-face {
   font-family: "TT Hoves";
   font-style: normal;
@@ -708,6 +755,7 @@ input, textarea, select, button {
   font-display: swap;
   src: url("/src/assets/fonts/TTHoves-Regular.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "TT Hoves";
   font-style: normal;
@@ -715,6 +763,7 @@ input, textarea, select, button {
   font-display: swap;
   src: url("/src/assets/fonts/TTHoves-Medium.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "TT Hoves";
   font-style: normal;
@@ -722,27 +771,31 @@ input, textarea, select, button {
   font-display: swap;
   src: url("/src/assets/fonts/TTHoves-DemiBold.woff2") format("woff2");
 }
+
 @font-face {
-  font-family: "Inter";
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url("/src/assets/fonts/Inter_Regular.woff2") format("woff2");
 }
+
 @font-face {
-  font-family: "Inter";
+  font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url("/src/assets/fonts/Inter_Medium.woff2") format("woff2");
 }
+
 @font-face {
-  font-family: "Inter";
+  font-family: Inter;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url("/src/assets/fonts/Inter_SemiBold.woff2") format("woff2");
 }
+
 body {
   font-size: clamp(0.875rem, 0.75rem + 0.5555555556vw, 1.25rem);
   background: var(--white);
@@ -804,21 +857,27 @@ svg * {
     color: var(--orange-hover);
   }
 }
+
 @media (any-hover: none) {
   a:active {
     color: var(--orange-hover);
   }
 }
+
 a {
   color: var(--black);
   font-size: 1rem;
   font-weight: 500;
 }
+
 a[class] {
   text-decoration: none;
 }
 
 /* 3) Pages: стили целых страниц (hero, about, blog) */
+
 /* 4) Layouts: header, footer, grid и т.д. */
+
 /* 5) Components: кнопки, карточки, модалки и т.п. */
-/* 6) Utilities: вспомогательные классы, accessibility, shame (патчи) — в самом конце *//*# sourceMappingURL=main.css.map */
+
+/* 6) Utilities: вспомогательные классы, accessibility, shame (патчи) — в самом конце */

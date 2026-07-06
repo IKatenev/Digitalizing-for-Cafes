@@ -1,22 +1,24 @@
 :root {
   --white: #fff;
   --black: #000;
-
-  --gray-20: rgba(0, 0, 0, 0.45);
+  --gray-20: rgb(0 0 0 / 45%);
+  --gray-30: #e5e5e5;
   --gray-50: #f2f4f7;
-  --gray-80: rgba(0, 0, 0, 0.6);
-
+  --gray-60: #ced5df;
+  --gray-80: rgb(0 0 0 / 60%);
+  --gray-dark: #323232;
+  --dark: #22242c;
   --green: #e5fbe2;
   --orange: #ffe9da;
   --blue: #d9e1ff;
-
+  --purple: #f4e7f6;
+  --accent: #D9E1FF;
+  --accent-coral: #DFF4FF;
+  --text-secondary: #565e71;
   --orange-hover: #FF7F3F;
-
   --font-family: "TT Hoves", sans-serif;
   --second-family: "Inter", sans-serif;
-
   --container-width: rem(1360);  
   --container-padding-x: rem(16);
-
   --transition: all 0.2s;
 }

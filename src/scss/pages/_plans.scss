@@ -1,0 +1,331 @@
+@use "../abstracts" as *;
+
+.pricing-comparasion {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin-bottom: rem(40);
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__section-title {
+    @include fluid-text(36, 28);
+    margin-bottom: rem(20);
+    padding-bottom: rem(12);
+
+    @include tablet {
+      display: none;
+    }
+
+    &--inner {
+      @include fluid-text(24, 20);
+      color: var( --black);
+      text-align: center;
+      margin: rem(51) 0;
+
+      @include tablet {
+        text-align: left;
+      }
+    }
+  }
+
+  &__tabs {
+    display: none;
+    gap: rem(8);
+    margin-bottom: rem(32);
+    background-color: var(--gray-50);
+    padding: rem(8);
+    border-radius: rem(12);
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__tab {
+    flex: 1;
+    padding: rem(12) rem(16);
+    border: none;
+    background-color: transparent;
+    border-radius: rem(8);
+    font-weight: 500;
+    color: var(--gray-80);
+    cursor: pointer;
+    transition: var(--transition);
+
+    @include hover {
+      color: var(--orange-hover);
+    }
+
+    &--active {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: rem(325) repeat(3, 1fr);
+    gap: rem(24);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__column {
+    border-radius: rem(24);
+    padding: rem(32);
+
+    @include tablet {
+      border-radius: rem(16);
+      padding: rem(24);
+      display: none;
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &--basic {
+      background-color: var(--blue);
+    }
+
+    &--plus {
+      background-color: var(--green);
+    }
+
+    &--business {
+      background-color: var(--orange);
+    }
+
+    &--headers {
+      flex-shrink: 1;
+      background-color: transparent;
+      border-radius: 0;
+      padding: rem(33) 0;
+
+      @include tablet {
+        display: none;
+      }
+
+      .pricing-comparasion__section {
+        align-items: flex-start;
+        margin-bottom: rem(0);
+      }
+
+      .pricing-comparasion__row {
+        height: rem(70);
+      }
+    }
+  }
+
+  &__section {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(16);
+    margin-bottom: rem(140);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(12) 0;
+    gap: rem(16);
+
+    @include tablet {
+      padding: rem(16) 0;
+      width: 100%;
+
+      .pricing-comparasion__label {
+        width: auto;
+      }
+    }
+  }
+
+  &__label {
+    font-size: rem(16);
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  &__value {
+    font-size: rem(16);
+    font-weight: 500;
+    text-align: right;
+    padding: rem(12) rem(24);
+    background-color: var(--white);
+    border-radius: rem(40);
+    flex-shrink: 0;
+    gap: rem(8);
+
+    &--check {
+      display: flex;
+      img {
+        display: flex;
+        align-self: center;
+        width: rem(12);
+        height: rem(24);
+        flex-shrink: 0;
+      }
+    }
+
+    &--cross {
+      color: var(--gray-80);
+      background-color: transparent;
+      border: 1px solid var(--gray-20);
+    }
+  }
+
+  // Скрываем label и внутренние заголовки на десктопе
+  @include tablet-above {
+    .pricing-comparasion__column:not(.pricing-comparasion__column--headers) {
+      .pricing-comparasion__label,
+      .pricing-comparasion__section-title--inner {
+        display: none;
+      }
+    }
+  }
+}
+
+.plans-features {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+    margin: 0 auto rem(48);
+    text-align: center;
+
+    @include tablet {
+      text-align: inherit;
+      margin-bottom: rem(32);
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(20);
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 0;
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    @include tablet {
+      gap: rem(16);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: rem(32);
+    padding-right: rem(40);
+    border-radius: rem(40);
+    background: var(--gray-50);
+    min-height: rem(450);
+    user-select: none;
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+
+    @include tablet {
+      min-height: rem(380);
+      min-width: rem(300);
+    }
+  }
+
+  &__card-icon {
+    @include square(rem(80));
+    @include flex-center;
+    margin-bottom: rem(24);
+
+    svg {
+      @include square(rem(48));
+      color: var(--black);
+    }
+
+    &--green {
+      background: url("/src/assets/icons/hexagon-green.svg") center no-repeat;
+    }
+
+    &--purple {
+      background: url("/src/assets/icons/hexagon-pink.svg") center no-repeat;
+    }
+  }
+
+  &__card-title {
+    margin: 0;
+    margin-bottom: auto;
+    font-size: rem(36);
+    line-height: 1.1;
+    font-weight: 400;
+
+    @include tablet {
+      font-size: rem(28);
+    }
+  }
+
+  &__card-desc {
+    margin: 0;
+    font-size: rem(20);
+    line-height: 1.2;
+    color: var(--gray-20);
+
+    @include tablet {
+      font-size: rem(16);
+    }
+  }
+}

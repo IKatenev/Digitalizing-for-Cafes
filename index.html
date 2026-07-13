@@ -2,19 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <!-- Исправление a11y: разрешено масштабирование -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
     <title>%VITE_SITE_TITLE%</title>
-    <meta name="description" content="%VITE_SITE_DESC%" />
+    <meta name="description" content="%VITE_MAIN_SITE_DESC%" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="%VITE_SITE_TITLE%" />
-    <meta property="og:description" content="%VITE_SITE_DESC%" />
+    <meta property="og:description" content="%VITE_MAIN_SITE_DESC%" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="%VITE_SITE_URL%" />
     <meta property="og:image" content="%VITE_OG_IMAGE%" />
@@ -22,11 +18,14 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%VITE_SITE_TITLE%" />
+    <meta name="twitter:description" content="%VITE_MAIN_SITE_DESC%" />
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="%VITE_SITE_URL%" />
 
     <!-- Main JS -->
     <script type="module" src="/src/js/main.js" defer></script>
@@ -36,31 +35,25 @@
     <!-- Skip-link for accessibility -->
     <a href="#main" class="skip-link visually-hidden">Перейти к контенту</a>
 
-    <!-- Исправление a11y: скрыт от скринридеров -->
     <div class="page-top-bg" aria-hidden="true"></div>
 
     <div id="header"></div>
 
-    <!-- Исправление: убран избыточный role="main" -->
     <main id="main">
       <section class="hero">
         <div class="hero__content">
           <p class="hero__label">АВТОМАТИЗАЦИЯ РИТЕЙЛА</p>
           <h1 class="hero__title">Весь ваш бизнес в одной системе учета</h1>
           <p class="hero__subtitle">Весь ваш бизнес в одной POS-системе</p>
-
           <div class="hero__actions">
-            <!-- Исправление валидности: <a> вместо <button> -->
             <a href="#" class="btn">Попробовать бесплатно</a>
             <a href="#" class="hero__link">Связаться с нами</a>
           </div>
         </div>
       </section>
 
-      <!-- Исправление a11y: скрыт от скринридеров -->
       <div class="hero-divider" aria-hidden="true"></div>
 
-      <!-- Section: About POS -->
       <section class="about-pos">
         <div class="about-pos__inner">
           <div class="about-pos__text">
@@ -82,10 +75,8 @@
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider" aria-hidden="true"></div>
 
-      <!-- Section: Features -->
       <section class="features">
         <div class="features__inner">
           <div class="features__intro">
@@ -138,10 +129,8 @@
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider" aria-hidden="true"></div>
 
-      <!-- Section: Testimonials / Why choose -->
       <section class="testimonials-features" id="why-us">
         <div class="testimonials-features__inner">
           <h2 class="testimonials-features__title">Почему магазины выбирают Absolut POS</h2>
@@ -195,7 +184,6 @@
         </div>
       </section>
 
-      <!-- Section: Testimonial + Stats -->
       <section class="testimonial-cta">
         <div class="testimonial-cta__inner">
           <div class="testimonial-cta__card">
@@ -219,7 +207,6 @@
         </div>
       </section>
 
-      <!-- Section: Retail Types -->
       <section class="retail-types">
         <div class="retail-types__inner">
           <div class="retail-types__header">
@@ -271,10 +258,8 @@
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider" aria-hidden="true"></div>
 
-      <!-- Section: Equipment -->
       <section class="equipment">
         <div class="equipment__inner">
           <div class="equipment__header">
@@ -510,10 +495,8 @@
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider" aria-hidden="true"></div>
 
-      <!-- Section: Pricing -->
       <section class="pricing">
         <div class="pricing__inner">
           <div class="pricing__info">
@@ -621,7 +604,6 @@
         </div>
       </section>
 
-      <!-- Section: CTA -->
       <section class="cta">
         <div class="cta__inner">
           <div class="cta__content">
@@ -647,7 +629,6 @@
         </div>
       </section>
 
-      <!-- Section: How to start with Absolut POS -->
       <section class="how-to-start">
         <div class="how-to-start__inner">
           <header class="how-to-start__header">
@@ -658,36 +639,34 @@
               <div class="how-to-start__badge how-to-start__badge--orange">
                 <span class="how-to-start__badge-number" aria-hidden="true">1</span>
               </div>
-              <p class="how-to-start__card-text">Зарегистрируйтесь за несколько минут</p>
+              <h3 class="how-to-start__card-text">Зарегистрируйтесь за несколько минут</h3>
             </article>
             <article class="how-to-start__card">
               <div class="how-to-start__badge how-to-start__badge--pink">
                 <span class="how-to-start__badge-number" aria-hidden="true">2</span>
               </div>
-              <p class="how-to-start__card-text">
+              <h3 class="how-to-start__card-text">
                 Заполните каталог товаров или поручите это нам совершенно бесплатно
-              </p>
+              </h3>
             </article>
             <article class="how-to-start__card">
               <div class="how-to-start__badge how-to-start__badge--blue">
                 <span class="how-to-start__badge-number" aria-hidden="true">3</span>
               </div>
-              <p class="how-to-start__card-text">Установите приложение для сотрудников</p>
+              <h3 class="how-to-start__card-text">Установите приложение для сотрудников</h3>
             </article>
             <article class="how-to-start__card">
               <div class="how-to-start__badge how-to-start__badge--green">
                 <span class="how-to-start__badge-number" aria-hidden="true">4</span>
               </div>
-              <p class="how-to-start__card-text">Начните работать эффективнее!</p>
+              <h3 class="how-to-start__card-text">Начните работать эффективнее!</h3>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider" aria-hidden="true"></div>
 
-      <!-- Section: Support & Contacts -->
       <section class="support-contacts">
         <div class="support-contacts__inner">
           <div class="support-contacts__info">
@@ -714,10 +693,8 @@
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider" aria-hidden="true"></div>
 
-      <!-- Section: Form -->
       <section class="form">
         <div class="form__inner">
           <div class="form__info">

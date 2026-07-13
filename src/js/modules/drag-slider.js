@@ -47,7 +47,13 @@ function createDragSlider(selector) {
 }
 
 export function initDragSliders() {
-  const sliders = [".retail-types__cards", ".testimonials-features__cards", ".how-to-start__cards"];
+  const sliders = [
+    ".retail-types__cards",
+    ".testimonials-features__cards",
+    ".how-to-start__cards",
+    ".acquiring__cards",
+    ".plans-features__cards",
+  ];
 
   sliders.forEach(createDragSlider);
 }

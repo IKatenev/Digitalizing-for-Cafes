@@ -4,7 +4,6 @@ class FormHandler {
     this.formData = {};
     this.startTime = null;
     this.minFillTime = 1500;
-    this.debug = true;
 
     this.patterns = {
       email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -13,12 +12,6 @@ class FormHandler {
 
     this.init();
   }
-
-  // log(...args) {
-  //   if (this.debug) {
-  //     console.log(...args);
-  //   }
-  // }
 
   init() {
     this.bindEvents();

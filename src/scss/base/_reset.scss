@@ -17,6 +17,7 @@
 html {
   line-height: 1.15; /* 1 */
   text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%;
   scrollbar-gutter: stable;
 }
 
@@ -211,7 +212,6 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  appearance: auto;
   appearance: button;
 }
 
@@ -304,7 +304,6 @@ textarea {
  */
 
 [type="search"] {
-  appearance: textfield; /* 1 */
   appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }

@@ -251,7 +251,7 @@ class FormHandler {
       formData.append("agreement", this.formData.agreement ? "1" : "0");
       formData.append("website", this.formData.website);
 
-      const response = await fetch("telegram.php", {
+      const response = await fetch(import.meta.env.VITE_FORM_ENDPOINT || "/telegram.php", {
         method: "POST",
         body: formData,
       });

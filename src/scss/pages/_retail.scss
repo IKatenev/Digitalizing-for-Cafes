@@ -32,6 +32,7 @@
     letter-spacing: normal;
     color: var(--gray-80);
     margin-bottom: rem(24);
+    text-transform: uppercase;
 
     @include laptop {
       font-size: rem(16);
@@ -852,6 +853,7 @@
 
   &__desc {
     @include fluid-text(36, 28);
+    line-height: 1.1;
     margin: 0 auto;
     max-width: rem(724);
     color: var(--gray-20);

@@ -18,9 +18,20 @@ export default defineConfig({
     port: 5173,
     open: true,
   },
+
   preview: {
     host: "127.0.0.1",
     port: 5174,
     open: true,
+  },
+
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        pricing: "pricing.html",
+        plans: "plans.html",
+      },
+    },
   },
 });

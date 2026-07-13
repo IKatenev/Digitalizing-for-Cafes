@@ -7,7 +7,7 @@ export function initScrollToTop() {
 
   scrollToTopBtn.addEventListener("click", () => {
     const startPosition = window.scrollY;
-    const duration = 500;
+    const duration = 750;
     let startTime = null;
 
     // Ease-out quadratic function for a natural deceleration feel

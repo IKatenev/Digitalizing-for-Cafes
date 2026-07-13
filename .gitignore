@@ -10,6 +10,7 @@ _source
 node_modules
 dist
 dist-ssr
+vite-plugins
 *.local
 
 # Editor directories and files

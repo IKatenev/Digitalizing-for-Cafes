@@ -624,7 +624,7 @@
   &__bg {
     position: absolute;
     inset: 0;
-    background: url("/src/assets/images/Customer-image-1.jpg") center / cover no-repeat;
+    background: url("/src/assets/images/Customer-image-1.webp") center / cover no-repeat;
     z-index: 0;
   }
 
@@ -770,6 +770,8 @@
     padding: rem(32);
     min-height: rem(480);
     min-width: rem(300);
+
+    user-select: none;
 
     @include tablet {
       border-radius: rem(24);
@@ -1432,6 +1434,8 @@
     padding: rem(32);
     background: var(--gray-50);
     border-radius: rem(40);
+
+    user-select: none;
 
     @include tablet {
       min-height: rem(320);

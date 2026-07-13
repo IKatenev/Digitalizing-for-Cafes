@@ -9,7 +9,7 @@
     <meta name="description" content="%VITE_PRICING_SITE_DESC%" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="%VITE_SITE_TITLE%" - Цены />
+    <meta property="og:title" content="%VITE_SITE_TITLE% - Цены" />
     <meta property="og:description" content="%VITE_PRICING_SITE_DESC%" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="%VITE_SITE_URL%/pricing" />
@@ -18,7 +18,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="%VITE_SITE_TITLE%" - Цены />
+    <meta name="twitter:title" content="%VITE_SITE_TITLE% - Цены" />
     <meta name="twitter:description" content="%VITE_PRICING_SITE_DESC%" />
 
     <!-- Favicon -->
@@ -26,6 +26,22 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href="%VITE_SITE_URL%/pricing" />
+
+    <!-- Font preloads -->
+    <link
+      rel="preload"
+      href="/src/assets/fonts/TTHoves-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/src/assets/fonts/TTHoves-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
 
     <!-- Main JS -->
     <script type="module" src="/src/js/main.js" defer></script>
@@ -37,7 +53,7 @@
 
     <div class="page-top-bg" aria-hidden="true"></div>
 
-    <div id="header"></div>
+    <include src="partials/header.html" />
 
     <main id="main">
       <section class="hero">
@@ -260,7 +276,13 @@
           <div class="acquiring__cards">
             <article class="acquiring__card acquiring__card--blue">
               <div class="acquiring__card-icon">
-                <img src="src/assets/icons/store.svg" alt="" aria-hidden="true" />
+                <img
+                  src="src/assets/icons/store.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="48"
+                  height="48"
+                />
               </div>
               <h3 class="acquiring__card-title">Торговый эквайринг</h3>
               <div class="acquiring__card-bottom">
@@ -272,7 +294,13 @@
             </article>
             <article class="acquiring__card acquiring__card--purple">
               <div class="acquiring__card-icon">
-                <img src="src/assets/icons/phone.svg" alt="" aria-hidden="true" />
+                <img
+                  src="src/assets/icons/phone.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="48"
+                  height="48"
+                />
               </div>
               <h3 class="acquiring__card-title">Мобильное приложение</h3>
               <div class="acquiring__card-bottom">
@@ -285,7 +313,13 @@
             </article>
             <article class="acquiring__card acquiring__card--orange">
               <div class="acquiring__card-icon">
-                <img src="src/assets/icons/globus.svg" alt="" aria-hidden="true" />
+                <img
+                  src="src/assets/icons/globus.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="48"
+                  height="48"
+                />
               </div>
               <h3 class="acquiring__card-title">Онлайн</h3>
               <div class="acquiring__card-bottom">
@@ -310,9 +344,12 @@
             <article class="plans__card">
               <div class="plans__card-preview">
                 <img
-                  src="src/assets/images/Business-image-1.jpg"
+                  src="src/assets/images/Business-image-1.webp?as=webp&w=440"
                   alt="Точка на вынос"
                   loading="lazy"
+                  width="440"
+                  height="330"
+                  decoding="async"
                 />
               </div>
               <h3 class="plans__card-title">Точка на вынос</h3>
@@ -362,7 +399,14 @@
             </article>
             <article class="plans__card">
               <div class="plans__card-preview">
-                <img src="src/assets/images/Business-image-2.jpg" alt="Ресторан" loading="lazy" />
+                <img
+                  src="src/assets/images/Business-image-2.webp?as=webp&w=440"
+                  alt="Ресторан"
+                  loading="lazy"
+                  width="440"
+                  height="330"
+                  decoding="async"
+                />
               </div>
               <h3 class="plans__card-title">Ресторан</h3>
               <p class="plans__card-desc">
@@ -412,7 +456,14 @@
             </article>
             <article class="plans__card">
               <div class="plans__card-preview">
-                <img src="src/assets/images/Business-image-3.jpg" alt="Магазин" loading="lazy" />
+                <img
+                  src="src/assets/images/Business-image-3.webp?as=webp&w=440"
+                  alt="Магазин"
+                  loading="lazy"
+                  width="440"
+                  height="330"
+                  decoding="async"
+                />
               </div>
               <h3 class="plans__card-title">Магазин</h3>
               <p class="plans__card-desc">
@@ -478,9 +529,12 @@
             <article class="equipment__card">
               <div class="equipment__card-preview">
                 <img
-                  src="src/assets/images/Hardware-image-1.jpg"
+                  src="src/assets/images/Hardware-image-1.webp?as=webp&w=376"
                   alt="Терминал 3 в 1"
+                  width="376"
+                  height="376"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="equipment__card-header">
@@ -539,15 +593,18 @@
               </ul>
               <!-- Исправление a11y: alt="" внутри кнопки с aria-label -->
               <button class="equipment__card-btn" type="button" aria-label="Подробнее">
-                <img src="src/assets/icons/plus-icon.svg" alt="" />
+                <img src="src/assets/icons/plus-icon.svg" alt="" width="14" height="14" />
               </button>
             </article>
             <article class="equipment__card">
               <div class="equipment__card-preview">
                 <img
-                  src="src/assets/images/Hardware-image-2.jpg"
+                  src="src/assets/images/Hardware-image-2.webp?as=webp&w=376"
                   alt="Кассовая станция"
+                  width="376"
+                  height="376"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="equipment__card-header">
@@ -616,15 +673,18 @@
                 </li>
               </ul>
               <button class="equipment__card-btn" type="button" aria-label="Подробнее">
-                <img src="src/assets/icons/plus-icon.svg" alt="" />
+                <img src="src/assets/icons/plus-icon.svg" alt="" width="14" height="14" />
               </button>
             </article>
             <article class="equipment__card">
               <div class="equipment__card-preview">
                 <img
-                  src="src/assets/images/Hardware-image-3.jpg"
+                  src="src/assets/images/Hardware-image-3.webp?as=webp&w=376"
                   alt="Absolut моноблок"
+                  width="376"
+                  height="376"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="equipment__card-header">
@@ -693,7 +753,7 @@
                 </li>
               </ul>
               <button class="equipment__card-btn" type="button" aria-label="Подробнее">
-                <img src="src/assets/icons/plus-icon.svg" alt="" />
+                <img src="src/assets/icons/plus-icon.svg" alt="" width="14" height="14" />
               </button>
             </article>
           </div>
@@ -790,6 +850,6 @@
       </section>
     </main>
 
-    <div id="footer"></div>
+    <include src="partials/footer.html" />
   </body>
 </html>

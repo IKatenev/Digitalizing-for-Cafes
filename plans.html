@@ -9,7 +9,7 @@
     <meta name="description" content="%VITE_PLANS_SITE_DESC%" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="%VITE_SITE_TITLE%" - Планы />
+    <meta property="og:title" content="%VITE_SITE_TITLE% - Планы" />
     <meta property="og:description" content="%VITE_PLANS_SITE_DESC%" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="%VITE_SITE_URL%/plans" />
@@ -18,7 +18,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="%VITE_SITE_TITLE%" - Планы />
+    <meta name="twitter:title" content="%VITE_SITE_TITLE% - Планы" />
     <meta name="twitter:description" content="%VITE_PLANS_SITE_DESC%" />
 
     <!-- Favicon -->
@@ -26,6 +26,10 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href="%VITE_SITE_URL%/plans" />
+
+    <!-- Font preloads -->
+    <link rel="preload" href="/src/assets/fonts/TTHoves-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/src/assets/fonts/TTHoves-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
     <!-- Main JS -->
     <script type="module" src="/src/js/main.js" defer></script>
@@ -37,7 +41,7 @@
 
     <div class="page-top-bg" aria-hidden="true"></div>
 
-    <div id="header"></div>
+    <include src="partials/header.html" />
 
     <main id="main">
       <section class="hero">
@@ -326,8 +330,14 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Смартфон</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 1
-                    устройство</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    1 устройство</span
                   >
                 </div>
               </div>
@@ -354,35 +364,60 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Аналитика</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Заказы</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Инвентаризация</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Маркетинг</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Лояльность</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
               </div>
@@ -435,8 +470,14 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Смартфон</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 3
-                    устройства</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    3 устройства</span
                   >
                 </div>
               </div>
@@ -446,16 +487,28 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Планшет</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 2
-                    990 ₽ / шт</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    2 990 ₽ / шт</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Смартфон</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 790
-                    ₽ / шт</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    790 ₽ / шт</span
                   >
                 </div>
               </div>
@@ -472,28 +525,48 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Заказы</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Инвентаризация</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Маркетинг</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Лояльность</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
               </div>
@@ -538,16 +611,28 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Планшет</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> от
-                    5 устройств</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    от 5 устройств</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Смартфон</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> от
-                    10 устройств</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    от 10 устройств</span
                   >
                 </div>
               </div>
@@ -557,16 +642,28 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Планшет</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 2
-                    990 ₽ / шт</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    2 990 ₽ / шт</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Смартфон</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 790
-                    ₽ / шт</span
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    790 ₽ / шт</span
                   >
                 </div>
               </div>
@@ -576,35 +673,60 @@
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Аналитика</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Заказы</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Инвентаризация</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Маркетинг</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
                   <span class="pricing-comparasion__label">Лояльность</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                    ><img
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
                   /></span>
                 </div>
               </div>
@@ -621,7 +743,13 @@
           <div class="plans-features__cards">
             <article class="plans-features__card">
               <div class="plans-features__card-icon plans-features__card-icon--green">
-                <img src="/src/assets/icons/support.svg" alt="" aria-hidden="true" />
+                <img
+                  src="/src/assets/icons/support.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="35"
+                  height="38"
+                />
               </div>
               <h3 class="plans-features__card-title">Служба поддержки</h3>
               <p class="plans-features__card-desc">
@@ -630,7 +758,13 @@
             </article>
             <article class="plans-features__card">
               <div class="plans-features__card-icon plans-features__card-icon--purple">
-                <img src="/src/assets/icons/offline.svg" alt="" aria-hidden="true" />
+                <img
+                  src="/src/assets/icons/offline.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="39"
+                  height="39"
+                />
               </div>
               <h3 class="plans-features__card-title">Оффлайн режим</h3>
               <p class="plans-features__card-desc">
@@ -723,6 +857,6 @@
       </section>
     </main>
 
-    <div id="footer"></div>
+    <include src="partials/footer.html" />
   </body>
 </html>

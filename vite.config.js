@@ -4,7 +4,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import htmlIncludes from "./vite-plugins/htmlIncludes.js";
 
 export default defineConfig({
-  base: "/Digitalizing-for-Cafes/",
+  base: "./",
 
   plugins: [
     htmlIncludes(),
@@ -47,6 +47,14 @@ export default defineConfig({
 
   build: {
     rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (/\.(woff2?|ttf|otf|eot)$/.test(assetInfo.name)) {
+            return "assets/fonts/[name][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
+      },
       input: {
         main: "index.html",
         pricing: "pricing.html",

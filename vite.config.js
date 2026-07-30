@@ -4,7 +4,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import htmlIncludes from "./vite-plugins/htmlIncludes.js";
 
 export default defineConfig({
-  base: "./",
+  base: "/Digitalizing-for-Cafes/",
 
   plugins: [
     htmlIncludes(),

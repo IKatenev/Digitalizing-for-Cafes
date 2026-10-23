@@ -10,6 +10,7 @@ A responsive marketing website for a café and retail point-of-sale product, imp
 
 <p align="center">
   <img src="docs/screenshots/home-mobile.webp" alt="Responsive mobile homepage" width="280">
+  <img src="docs/screenshots/form-mobile.webp" alt="Interactive feedback form" width="280">
   <img src="docs/screenshots/plans-mobile.webp" alt="Interactive mobile pricing comparison" width="280">
 </p>
 

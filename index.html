@@ -8,20 +8,54 @@
     <!-- Skip-link for accessibility -->
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <div class="page-top-bg" aria-hidden="true"></div>
+    <div class="page-top-bg page-top-bg--home" aria-hidden="true"></div>
 
     <include src="partials/header.html" />
 
     <main id="main" tabindex="-1">
-      <section class="hero">
+      <section class="hero hero--home">
         <div class="hero__content">
-          <p class="hero__label">RETAIL AUTOMATION</p>
-          <h1 class="hero__title">Your whole business in one place</h1>
-          <p class="hero__subtitle">One POS system for your entire business</p>
+          <p class="hero__label">Made for your everyday</p>
+          <h1 class="hero__title">Less admin.<br />More happy customers.</h1>
+          <p class="hero__subtitle">
+            A simple POS system for cafés, restaurants and independent retailers. Bring your sales,
+            stock and daily tasks together.
+          </p>
           <div class="hero__actions">
-            <a href="#enquiry" class="btn">Try for free</a>
-            <a href="#enquiry" class="hero__link">Contact us</a>
+            <a href="#enquiry" class="btn">Try the demo <span aria-hidden="true">↗</span></a>
+            <a href="#product" class="hero__link"
+              >Explore the system <span aria-hidden="true">↓</span></a
+            >
           </div>
+          <ul class="hero__benefits" aria-label="Product highlights">
+            <li>Easy to use</li>
+            <li>Flexible plans</li>
+            <li>Works on your devices</li>
+          </ul>
+        </div>
+        <div class="hero__visual">
+          <img
+            class="hero__image"
+            src="/src/assets/generated/hero-cafe-800.webp"
+            srcset="
+              /src/assets/generated/hero-cafe-480.webp   480w,
+              /src/assets/generated/hero-cafe-800.webp   800w,
+              /src/assets/generated/hero-cafe-1200.webp 1200w
+            "
+            sizes="(max-width: 767px) calc(100vw - 80px), (max-width: 1440px) 44vw, 600px"
+            alt="Smiling cafe employee serving a customer paying by smartphone at the counter"
+            width="1200"
+            height="675"
+            fetchpriority="high"
+          />
+          <div class="hero__caption">
+            <span class="hero__caption-icon" aria-hidden="true">↗</span>
+            <div>
+              <strong>Your business, connected.</strong
+              ><span class="hero__caption-detail">Sales · Stock · Insights</span>
+            </div>
+          </div>
+          <span class="hero__visual-label">A little simpler. Every day.</span>
         </div>
       </section>
 
@@ -49,9 +83,8 @@
               alt="Cafe owner using a tablet at the counter"
               width="900"
               height="600"
-              loading="eager"
+              loading="lazy"
               decoding="async"
-              fetchpriority="high"
             />
           </div>
         </div>

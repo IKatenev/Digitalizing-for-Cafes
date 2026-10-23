@@ -8,3 +8,10 @@ for (const width of [380, 670, 900]) {
     .webp({ quality: 78 })
     .toFile(`src/assets/generated/pos-${width}.webp`);
 }
+
+for (const width of [480, 800, 1200]) {
+  await sharp("src/assets/images/cafe-payment-unsplash.jpg")
+    .resize({ width })
+    .webp({ quality: 88, effort: 6, smartSubsample: true })
+    .toFile(`src/assets/generated/hero-cafe-${width}.webp`);
+}

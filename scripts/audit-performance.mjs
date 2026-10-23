@@ -18,7 +18,7 @@ try {
       const args = [
         fileURLToPath(new URL("../node_modules/lighthouse/cli/index.js", import.meta.url)),
         new URL(file, baseUrl).href,
-        "--chrome-flags=--headless=new",
+        `--chrome-flags=${process.env.LIGHTHOUSE_CHROME_FLAGS || "--headless=new"}`,
         "--only-categories=performance,accessibility,best-practices,seo",
         "--output=json",
         `--output-path=${output}`,

@@ -581,12 +581,12 @@
     border-radius: rem(40);
     background: var(--gray-50);
     overflow: hidden;
-    min-height: rem(550);
+    min-height: rem(400);
     min-width: rem(300);
     user-select: none;
 
     @include tablet {
-      min-height: rem(420);
+      min-height: rem(320);
     }
 
     @include hover {

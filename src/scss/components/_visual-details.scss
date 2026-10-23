@@ -1,0 +1,99 @@
+@use "../abstracts" as *;
+
+.section-label {
+  margin: 0 0 rem(16);
+  font-size: rem(12);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-80);
+}
+
+.pricing__card {
+  position: relative;
+  border: 1px solid rgb(0 0 0 / 6%);
+
+  &--plus {
+    background: #def2da;
+    border-color: #b5cfaf;
+  }
+}
+
+.pricing__card-tag {
+  position: absolute;
+  top: rem(-12);
+  left: rem(32);
+  padding: rem(6) rem(10);
+  border: 1px solid #b5cfaf;
+  border-radius: rem(20);
+  background: #def2da;
+  font-size: rem(11);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #354c30;
+}
+
+.pricing__card-price {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.form__inner {
+  padding: clamp(1.25rem, 3vw, 3rem);
+  border: 1px solid #dce2ee;
+  border-radius: rem(32);
+  background: linear-gradient(120deg, #edf1ff, #f6faff 65%, #fff2e7);
+  gap: rem(40);
+}
+
+.form__info .section-label {
+  margin: 0;
+}
+
+.form__decoration {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-top: rem(12);
+
+  span {
+    padding: rem(12) rem(18);
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: rem(16);
+    background: var(--white);
+    font-size: rem(14);
+  }
+
+  span:nth-child(2) {
+    background: var(--orange);
+    transform: rotate(-5deg);
+  }
+
+  span:last-child {
+    background: var(--blue);
+    transform: rotate(4deg);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .features__card,
+  .retail-types__card,
+  .equipment__card,
+  .pricing__card {
+    transition: var(--transition);
+
+    &:hover {
+      transform: translateY(rem(-3));
+      box-shadow: 0 rem(10) rem(24) rgb(0 0 0 / 7%);
+    }
+  }
+}
+
+@include mobile {
+  .form__inner {
+    border-radius: rem(24);
+    gap: rem(12);
+  }
+}

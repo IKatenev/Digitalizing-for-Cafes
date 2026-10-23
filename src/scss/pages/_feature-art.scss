@@ -1,0 +1,116 @@
+@use "../abstracts" as *;
+
+.features__card-body {
+  justify-content: flex-start;
+}
+
+.feature-art {
+  display: flex;
+  align-items: flex-end;
+  gap: rem(10);
+  width: min(100%, #{rem(180)});
+  height: rem(88);
+  flex-shrink: 0;
+  margin: 0 0 rem(28);
+  padding: rem(12);
+  border: 1px solid rgb(0 0 0 / 9%);
+  border-radius: rem(16);
+  background: rgb(255 255 255 / 45%);
+
+  span {
+    display: block;
+    border-radius: rem(5);
+    background: #746080;
+  }
+
+  &--chart {
+    span {
+      flex: 1;
+      height: 30%;
+    }
+
+    :nth-child(2) {
+      height: 52%;
+    }
+
+    :nth-child(3) {
+      height: 70%;
+    }
+
+    :nth-child(4) {
+      height: 100%;
+      background: #ad8dbc;
+    }
+  }
+
+  &--devices {
+    :first-child {
+      width: 70%;
+      height: 100%;
+      border: rem(4) solid #536393;
+      background: linear-gradient(135deg, #e9eeff 45%, #b3c1eb 45%);
+    }
+
+    :last-child {
+      width: 24%;
+      height: 80%;
+      border: rem(3) solid #536393;
+      background: #e9eeff;
+      transform: rotate(6deg);
+    }
+  }
+
+  &--list {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: rem(8);
+
+    span {
+      height: rem(10);
+      background: linear-gradient(
+        to right,
+        #97634b 0 rem(10),
+        transparent rem(10) rem(18),
+        #d4ad95 rem(18)
+      );
+    }
+
+    span:last-child {
+      width: 72%;
+    }
+  }
+}
+
+.testimonial-cta__bg {
+  background-image:
+    linear-gradient(90deg, rgb(0 0 0 / 65%), rgb(0 0 0 / 10%)),
+    url("/src/assets/images/Customer-image-1.webp");
+}
+
+.testimonial-cta__quote-mark {
+  display: block;
+  height: rem(56);
+  font-size: rem(96);
+  line-height: 1;
+  color: #ffd8ba;
+}
+
+.testimonial-cta__quote strong {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #edbb94;
+  text-decoration-thickness: rem(2);
+  text-underline-offset: rem(6);
+}
+
+.testimonial-cta__author {
+  align-self: flex-start;
+  margin-top: rem(32);
+  padding-left: rem(16);
+  border-left: rem(2) solid #edbb94;
+}
+
+.about-pos__media {
+  box-shadow: 0 rem(12) rem(32) rgb(0 0 0 / 6%);
+}

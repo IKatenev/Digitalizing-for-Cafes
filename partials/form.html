@@ -1,9 +1,13 @@
 <section class="form" id="enquiry">
   <div class="form__inner">
     <div class="form__info">
+      <p class="section-label">Your next chapter ↗</p>
       <h2 class="form__title">Find out if Absolut POS is right for you</h2>
       <p class="form__desc">{{formDescription}}</p>
       <p class="form__privacy" id="privacy-notice">{{privacyText}}</p>
+      <div class="form__decoration" aria-hidden="true">
+        <span>Sales</span><span>Stock</span><span>Insights ↗</span>
+      </div>
     </div>
     <form class="form__fields" data-endpoint="{{formEndpoint}}" novalidate>
       <noscript><p class="form__message">Enable JavaScript to use this form.</p></noscript>
@@ -60,8 +64,7 @@
           <input type="checkbox" name="agreement" id="agreement" required />
           <span class="form__checkmark" aria-hidden="true"></span>
           <span class="form__checkbox-text">
-            I understand the <br />
-            <a href="#privacy-notice">privacy notice</a>
+            I understand the <a href="#privacy-notice">privacy notice</a>
           </span>
         </label>
         <button class="form__submit btn" type="submit" disabled>

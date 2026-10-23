@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.divider {
+  background: var(--white);
+  height: rem(128);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    height: rem(64);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(1);
+    background: var(--gray-30);
+  }
+}

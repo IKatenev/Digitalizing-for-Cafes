@@ -1,0 +1,194 @@
+@use "../abstracts" as *;
+
+.equipment {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: rem(64);
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: rem(40);
+      text-align: inherit;
+    }
+
+    @include mobile {
+      text-align: inherit;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+
+    margin: 0 auto rem(40);
+
+    @include tablet {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(36, 28);
+
+    line-height: 1.1;
+    margin: 0 auto;
+    max-width: rem(724);
+    color: var(--gray-20);
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: rem(40);
+    background: var(--gray-50);
+    padding: rem(32);
+    min-height: rem(680);
+    position: relative;
+    user-select: none;
+
+    @include tablet {
+      min-height: auto;
+      padding: rem(24);
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+  }
+
+  &__card-preview {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: rem(16);
+    margin-bottom: rem(20);
+    background: var(--white);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include tablet {
+      width: rem(300);
+    }
+
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+
+  &__card-header {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+    margin-bottom: rem(20);
+  }
+
+  &__card-icon {
+    @include square(rem(48));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--black);
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+
+    margin: 0;
+  }
+
+  &__card-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: end;
+    gap: rem(10);
+    margin-bottom: rem(64);
+
+    @include tablet {
+      margin-bottom: 0;
+      gap: rem(8);
+    }
+  }
+
+  &__card-feature {
+    @include fluid-text(20, 16);
+
+    display: flex;
+    align-items: center;
+    gap: rem(14);
+    line-height: 1.2;
+    color: var(--gray-20);
+
+    @include tablet {
+      gap: rem(8);
+    }
+
+    svg {
+      flex-shrink: 0;
+      color: var(--gray-20);
+    }
+  }
+
+  &__card-btn {
+    @include square(rem(48));
+    @include flex-center;
+
+    background: url("/src/assets/icons/hexagon-white.svg") center no-repeat;
+    background-size: rem(46);
+    position: absolute;
+    right: rem(32);
+    bottom: rem(32);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+
+    @include tablet {
+      right: rem(24);
+      bottom: rem(24);
+    }
+
+    @include hover {
+      color: var(--white);
+    }
+  }
+}

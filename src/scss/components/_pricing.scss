@@ -1,0 +1,171 @@
+@use "../abstracts" as *;
+
+.pricing {
+  background: var(--white);
+  padding: 0 rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+    display: flex;
+    gap: rem(40);
+
+    @include laptop {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    width: rem(324);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 28);
+
+    margin: 0 0 rem(24);
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__desc {
+    @include fluid-text(20, 16);
+
+    margin: auto 0 rem(16);
+    line-height: 1.2;
+    color: var(--gray-20);
+    text-wrap-style: pretty;
+
+    @include tablet {
+      margin: rem(24) 0;
+    }
+  }
+
+  &__link {
+    font-size: rem(20);
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: underline !important;
+    text-underline-offset: rem(2);
+    transition: var(--transition);
+  }
+
+  &__cards {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    min-width: 0;
+    gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: rem(40);
+    padding: rem(32);
+    min-height: rem(470);
+
+    @include tablet {
+      border-radius: rem(24);
+      min-height: auto;
+    }
+
+    @include hover {
+      box-shadow: 0 rem(8) rem(32) rgb(0 0 0 / 8%);
+    }
+
+    transition: var(--transition);
+
+    &--base {
+      background: var(--gray-50);
+    }
+
+    &--plus {
+      background: var(--green);
+    }
+
+    &--business {
+      background: var(--orange);
+    }
+  }
+
+  &__card-title {
+    @include fluid-text(36, 28);
+
+    margin: 0 0 rem(16);
+  }
+
+  &__card-desc {
+    margin: 0 0 rem(32);
+    font-size: rem(14);
+    line-height: 1.3;
+    color: var(--gray-20);
+  }
+
+  &__card-price {
+    display: block;
+    margin: 0 0 auto;
+    font-size: rem(48);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--black);
+
+    @include tablet {
+      margin-bottom: rem(24);
+    }
+
+    .pricing__card--business & {
+      font-size: rem(32);
+    }
+  }
+
+  &__card-features {
+    list-style: none;
+    margin: 0 0 rem(16);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+  }
+
+  &__card-feature {
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+    font-family: var(--font-family);
+    font-size: rem(14);
+    line-height: 1.3;
+
+    svg {
+      flex-shrink: 0;
+      stroke-width: 1px;
+      stroke: #000;
+    }
+  }
+
+  &__card-btn {
+    align-self: flex-start;
+  }
+}

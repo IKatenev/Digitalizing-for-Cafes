@@ -6,20 +6,31 @@ import prettierConfig from "eslint-config-prettier";
 
 export default defineConfig([
   {
+    ignores: [
+      "dist/**",
+      "_source/**",
+      "node_modules/**",
+      "reports/**",
+      "test-results/**",
+      "playwright-report/**",
+      ".wrangler/**",
+    ],
+  },
+  {
     files: ["**/*.{js,mjs,cjs}"],
-    plugins: {
-      js,
-      prettier: prettierPlugin,
-    },
-    extends: ["js/recommended", prettierConfig],
-    languageOptions: { globals: globals.browser },
+    plugins: { prettier: prettierPlugin },
+    extends: [js.configs.recommended, prettierConfig],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
     rules: {
-      ...prettierPlugin.configs.recommended.rules,
+      "prettier/prettier": "error",
       "no-console": "warn",
-      "no-unused-vars": "warn",
-      eqeqeq: "warn",
-      curly: "warn",
-      "no-else-return": "warn",
+      "no-unused-vars": "error",
+      eqeqeq: "error",
+      curly: "error",
     },
+  },
+  {
+    files: ["server/telegram/worker.js"],
+    rules: { "no-console": ["error", { allow: ["error"] }] },
   },
 ]);

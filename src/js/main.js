@@ -1,19 +1,12 @@
+import { initBurger } from "./modules/burger-button.js";
+import { initScrollToTop } from "./modules/scroll-to-top.js";
+import { initDragSliders } from "./modules/drag-slider.js";
+import { initForm } from "./modules/form.js";
+import { initPricingComparasion } from "./modules/pricing-comparasion.js";
 import "../scss/main.scss";
 
-document.querySelectorAll('a[href="#"]').forEach((link) => {
-  link.addEventListener("click", (e) => e.preventDefault());
-});
-
-import { initBurger } from "../js/modules/burger-button.js";
-import { initScrollToTop } from "../js/modules/scroll-to-top.js";
-import { initDragSliders } from "../js/modules/drag-slider.js";
-import { initForm } from "../js/modules/form.js";
-import { initPricingComparasion } from "../js/modules/pricing-comparasion.js";
-
-document.addEventListener("DOMContentLoaded", async () => {
-  initBurger();
-  initScrollToTop();
-  initDragSliders();
-  initForm();
-  initPricingComparasion();
-});
+initBurger();
+initScrollToTop();
+initDragSliders();
+initForm();
+initPricingComparasion();

@@ -1,59 +1,65 @@
-// src/js/modules/drag-slider.js
-
-function createDragSlider(selector) {
+function createDragSlider(selector, label) {
   const slider = document.querySelector(selector);
   if (!slider) {
     return;
   }
-
-  let isDown = false;
   let startX;
   let scrollLeft;
-
-  slider.addEventListener("pointerdown", (e) => {
-    // Игнорируем правый клик и вспомогательные кнопки
-    if (e.button !== 0) {
+  let dragging = false;
+  const stop = () => {
+    dragging = false;
+    slider.classList.remove(`${selector.slice(1)}--dragging`);
+  };
+  const update = () => {
+    const scrollable = slider.scrollWidth > slider.clientWidth + 1;
+    slider.tabIndex = scrollable ? 0 : -1;
+    slider.setAttribute("role", "region");
+    slider.setAttribute("aria-label", label);
+  };
+  new ResizeObserver(update).observe(slider);
+  slider.addEventListener("pointerdown", (event) => {
+    if (
+      event.button !== 0 ||
+      event.pointerType !== "mouse" ||
+      event.target.closest("a, button, input")
+    ) {
       return;
     }
-
-    isDown = true;
-    slider.classList.add(`${selector.slice(1)}--dragging`);
-    slider.setPointerCapture(e.pointerId);
-
-    startX = e.pageX - slider.offsetLeft;
+    dragging = true;
+    startX = event.clientX;
     scrollLeft = slider.scrollLeft;
+    slider.setPointerCapture(event.pointerId);
+    slider.classList.add(`${selector.slice(1)}--dragging`);
   });
-
-  slider.addEventListener("pointerleave", () => {
-    isDown = false;
-    slider.classList.remove(`${selector.slice(1)}--dragging`);
-  });
-
-  slider.addEventListener("pointerup", () => {
-    isDown = false;
-    slider.classList.remove(`${selector.slice(1)}--dragging`);
-  });
-
-  slider.addEventListener("pointermove", (e) => {
-    if (!isDown) {
+  slider.addEventListener("pointerup", stop);
+  slider.addEventListener("pointercancel", stop);
+  slider.addEventListener("lostpointercapture", stop);
+  slider.addEventListener("pointermove", (event) => {
+    if (!dragging) {
       return;
     }
-    e.preventDefault();
-
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // Скорость скролла
-    slider.scrollLeft = scrollLeft - walk;
+    event.preventDefault();
+    slider.scrollLeft = scrollLeft - (event.clientX - startX);
+  });
+  slider.addEventListener("keydown", (event) => {
+    if (event.target !== slider || !["ArrowLeft", "ArrowRight"].includes(event.key)) {
+      return;
+    }
+    event.preventDefault();
+    slider.scrollBy({
+      left: slider.clientWidth * (event.key === "ArrowRight" ? 0.8 : -0.8),
+      behavior: "instant",
+    });
   });
 }
 
 export function initDragSliders() {
   const sliders = [
-    ".retail-types__cards",
-    ".testimonials-features__cards",
-    ".how-to-start__cards",
-    ".acquiring__cards",
-    ".plans-features__cards",
+    [".retail-types__cards", "Business types"],
+    [".testimonials-features__cards", "Why choose Absolut POS"],
+    [".how-to-start__cards", "Getting started"],
+    [".acquiring__cards", "Payment options"],
+    [".plans-features__cards", "Included features"],
   ];
-
-  sliders.forEach(createDragSlider);
+  sliders.forEach(([selector, label]) => createDragSlider(selector, label));
 }

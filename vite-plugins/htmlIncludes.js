@@ -1,34 +1,48 @@
-import { readFileSync } from "fs";
-import { resolve, dirname } from "path";
+import { readFileSync } from "node:fs";
+import { dirname, resolve, relative, isAbsolute } from "node:path";
 
-export default function htmlIncludes() {
-  const INCLUDE_REGEX = /<include\s+src="([^"]+)"\s*\/?>/gi;
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (character) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character],
+  );
 
-  function resolveIncludes(html, htmlFilePath) {
-    const htmlDir = dirname(htmlFilePath);
-
-    return html.replace(INCLUDE_REGEX, (match, src) => {
-      const partialPath = resolve(htmlDir, src);
-
-      try {
-        return readFileSync(partialPath, "utf-8");
-      } catch {
-        // eslint-disable-next-line no-console
-        console.warn(`[htmlIncludes] Не найден файл: ${partialPath}`);
-        return `<!-- include not found: ${src} -->`;
+export default function htmlIncludes(valuesForPage) {
+  let root;
+  const dependencies = new Set();
+  const render = (html, file, stack = []) =>
+    html.replace(/<include\s+src="([^"]+)"\s*\/?\s*>/gi, (_, src) => {
+      const target = resolve(dirname(file), src);
+      const local = relative(root, target);
+      if (local.startsWith("..") || isAbsolute(local) || stack.includes(target)) {
+        throw new Error(`Invalid or circular HTML include: ${src}`);
       }
+      dependencies.add(target);
+      return render(readFileSync(target, "utf8"), target, [...stack, target]);
     });
-  }
-
   return {
-    name: "vite-plugin-html-includes",
-
+    name: "html-includes",
+    configResolved(config) {
+      root = config.root;
+    },
     transformIndexHtml: {
       order: "pre",
-      handler(html, ctx) {
-        const filePath = ctx.filename;
-        return resolveIncludes(html, filePath);
+      handler(html, context) {
+        const values = valuesForPage(context.filename);
+        return render(html, context.filename).replace(/\{\{(\w+)\}\}/g, (_, key) => {
+          if (!(key in values)) {
+            throw new Error(`Unknown HTML value: ${key}`);
+          }
+          return escapeHtml(values[key]);
+        });
       },
+    },
+    handleHotUpdate(context) {
+      if (dependencies.has(context.file)) {
+        context.server.ws.send({ type: "full-reload" });
+        return [];
+      }
     },
   };
 }

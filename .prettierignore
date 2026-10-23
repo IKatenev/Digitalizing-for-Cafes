@@ -1,0 +1,10 @@
+dist/
+node_modules/
+_source/
+test-results/
+playwright-report/
+reports/
+config.php
+telegram.php
+package-lock.json
+.wrangler/

@@ -1,3 +1,5 @@
+@use "functions" as *;
+
 :root {
   --white: #fff;
   --black: #000;
@@ -12,13 +14,14 @@
   --orange: #ffe9da;
   --blue: #d9e1ff;
   --purple: #f4e7f6;
-  --accent: #D9E1FF;
-  --accent-coral: #DFF4FF;
+  --accent: #d9e1ff;
+  --accent-coral: #dff4ff;
   --text-secondary: #565e71;
-  --orange-hover: #FF7F3F;
+  --orange-hover: #a84312;
   --font-family: "TT Hoves", sans-serif;
-  --second-family: "Inter", sans-serif;
-  --container-width: rem(1360);  
-  --container-padding-x: rem(16);
-  --transition: all 0.2s;
+  --second-family: system-ui, sans-serif;
+  --container-width: #{rem(1360)};
+  --container-padding-x: #{rem(16)};
+  --transition:
+    color 0.2s, background-color 0.2s, box-shadow 0.2s, opacity 0.2s, transform 0.2s, rotate 0.2s;
 }

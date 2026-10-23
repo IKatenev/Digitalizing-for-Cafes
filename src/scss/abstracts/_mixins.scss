@@ -1,5 +1,4 @@
 @use "sass:math";
-@use "variables" as *;
 @use "functions" as *;
 
 @mixin fluid-text($max: 48, $min: 16) {
@@ -53,6 +52,5 @@
   padding: 0 !important;
   white-space: nowrap !important;
   clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }

@@ -1,17 +1,6 @@
-/* 1) Core: переменные, функции, миксины */
 @use "abstracts/index" as *;
-
-/* 2) Base: глобальные стили (reset, root vars, типографика) */
+@use "abstracts/variables" as *;
 @use "base/index" as *;
-
-/* 3) Pages: стили целых страниц (hero, about, blog) */
-@use "pages/index" as *;
-
-/* 4) Layouts: header, footer, grid и т.д. */
 @use "layouts/index" as *;
-
-/* 5) Components: кнопки, карточки, модалки и т.п. */
 @use "components/index" as *;
-
-/* 6) Utilities: вспомогательные классы, accessibility, shame (патчи) — в самом конце */
 @use "utilities/index" as *;

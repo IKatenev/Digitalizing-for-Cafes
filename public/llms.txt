@@ -1,0 +1,24 @@
+# Digitalizing for Cafes
+
+> Multi-page British English landing site for a cafe POS system. Built with Vite + SCSS + vanilla JS.
+
+This project is a high-performance landing page featuring a modular architecture for both styles (SCSS) and logic (Vanilla JS). It follows BEM naming conventions and a desktop-first responsive design approach.
+
+## Architecture
+
+- [Project Instructions](https://github.com/ikatenev/Digitalizing-for-Cafes/blob/main/AGENTS.md): Core guidelines, architectural overview, and development workflows.
+- [JS Entrypoint](https://github.com/ikatenev/Digitalizing-for-Cafes/blob/main/src/js/main.js): Main JavaScript entry point that imports styles and initializes modules.
+- [SCSS Entrypoint](https://github.com/ikatenev/Digitalizing-for-Cafes/blob/main/src/scss/main.scss): Central SCSS file managing the order of imports (abstracts, base, pages, layouts, components, utilities).
+- [Package Configuration](https://github.com/ikatenev/Digitalizing-for-Cafes/blob/main/package.json): Project dependencies, build scripts, and linting configurations.
+
+## Modules
+
+- [JS Feature Modules](https://github.com/ikatenev/Digitalizing-for-Cafes/tree/main/src/js/modules/): Individual JavaScript files for specific features (e.g., burger button, form handling, sliders).
+- [SCSS Components](https://github.com/ikatenev/Digitalizing-for-Cafes/tree/main/src/scss/components/): Reusable BEM-styled UI components.
+- [SCSS Layouts](https://github.com/ikatenev/Digitalizing-for-Cafes/tree/main/src/scss/layouts/): Global structural styles for header and footer.
+
+## Optional
+
+- [Main HTML](index.html): The primary HTML structure of the landing page.
+- [SCSS Variables](https://github.com/ikatenev/Digitalizing-for-Cafes/blob/main/src/scss/abstracts/_variables.scss): Design tokens and theme variables.
+- [SCSS Mixins](https://github.com/ikatenev/Digitalizing-for-Cafes/blob/main/src/scss/abstracts/_mixins.scss): Reusable SCSS snippets for common styles.

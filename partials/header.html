@@ -1,93 +1,46 @@
 <header class="header">
   <div class="header__inner">
-    <a href="/" class="logo" aria-label="На главную">
+    <a href="index.html" class="logo" aria-label="Absolut POS home">
       <picture>
         <source
-          srcset="src/assets/icons/logo-mobile.svg"
+          srcset="/src/assets/icons/logo-mobile.svg"
           media="(max-width: 768px)"
           width="87"
           height="32"
         />
-
-        <!-- Desktop version (default) -->
-        <img src="src/assets/icons/logo.svg" alt="%VITE_SITE_TITLE%" width="175" height="36" />
+        <img src="/src/assets/icons/logo.svg" alt="Absolut POS" width="175" height="36" />
       </picture>
     </a>
-
     <div class="header__overlay" id="overlay">
-      <nav class="header__nav" id="main-nav" aria-label="Главное меню">
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="#why-us" class="header__nav-link">
-              Продукты
-              <img src="src/assets/icons/arrow-down.svg" alt="" width="10" height="19" />
-            </a>
+            <a href="index.html#product" class="header__nav-link">Overview</a>
           </li>
           <li class="header__nav-item">
-            <a href="#" class="header__nav-link">
-              Типы бизнеса
-              <img src="src/assets/icons/arrow-down.svg" alt="" width="10" height="19" />
-            </a>
+            <a href="index.html#business-types" class="header__nav-link">Businesses</a>
           </li>
           <li class="header__nav-item">
-            <a href="#" class="header__nav-link">Почему мы</a>
+            <a href="pricing.html#hardware" class="header__nav-link">Hardware</a>
           </li>
           <li class="header__nav-item">
-            <a href="/pricing.html" class="header__nav-link">Цены</a>
+            <a href="pricing.html" class="header__nav-link">Pricing</a>
           </li>
           <li class="header__nav-item">
-            <a href="/plans.html" class="header__nav-link">Планы</a>
+            <a href="plans.html" class="header__nav-link">Compare plans</a>
           </li>
         </ul>
       </nav>
-
-      <a href="#" class="header__login-btn btn btn--transparent visible-laptop" aria-label="Войти">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="11"
-          height="11"
-          viewBox="0 0 11 11"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M5.33333 5.33333C6.80667 5.33333 8 4.14 8 2.66667C8 1.19333 6.80667 0 5.33333 0C3.86 0 2.66667 1.19333 2.66667 2.66667C2.66667 4.14 3.86 5.33333 5.33333 5.33333ZM5.33333 6.66667C3.55333 6.66667 0 7.56 0 9.33333V10.6667H10.6667V9.33333C10.6667 7.56 7.11333 6.66667 5.33333 6.66667Z"
-            fill="#323232"
-          />
-        </svg>
-        Войти
-      </a>
     </div>
     <div class="header__buttons">
-      <a
-        href="#"
-        class="header__login-btn btn btn--transparent hidden-laptop"
-        aria-label="Войти"
-        aria-hidden="true"
-        tabindex="-1"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="11"
-          height="11"
-          viewBox="0 0 11 11"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M5.33333 5.33333C6.80667 5.33333 8 4.14 8 2.66667C8 1.19333 6.80667 0 5.33333 0C3.86 0 2.66667 1.19333 2.66667 2.66667C2.66667 4.14 3.86 5.33333 5.33333 5.33333ZM5.33333 6.66667C3.55333 6.66667 0 7.56 0 9.33333V10.6667H10.6667V9.33333C10.6667 7.56 7.11333 6.66667 5.33333 6.66667Z"
-            fill="#323232"
-          />
-        </svg>
-        Войти
-      </a>
-      <a href="#" class="header__free-start-btn btn btn--white">Начать бесплатно</a>
+      <a href="#enquiry" class="header__free-start-btn btn btn--white">Try the demo</a>
     </div>
     <button
       class="header__burger-button burger-button visible-laptop"
       id="burger-btn"
+      type="button"
       aria-controls="overlay"
-      aria-label="Открыть меню"
+      aria-label="Open menu"
       aria-expanded="false"
     >
       <span class="burger-button__line" aria-hidden="true"></span>

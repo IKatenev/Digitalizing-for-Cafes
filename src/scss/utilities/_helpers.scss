@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
@@ -31,5 +31,98 @@
 .visible-laptop {
   @include laptop-above {
     display: none !important;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  color: var(--black);
+  translate: 0 -200%;
+
+  &:focus {
+    translate: 0;
+  }
+}
+
+#main:focus {
+  outline: none;
+}
+
+[id] {
+  scroll-margin-top: 1rem;
+}
+
+.form__privacy {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0;
+  max-width: 28rem;
+}
+
+.form__checkbox input:focus-visible + .form__checkmark {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
+}
+
+.form__message {
+  margin: 0;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.form__message--error {
+  background: #fff0eb;
+  color: #8a2400;
+}
+
+.form__message--success {
+  background: var(--green);
+  color: #17451b;
+}
+
+.form__row--bottom {
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form__field {
+  min-width: 0;
+}
+
+.footer__notice {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}
+
+.footer__notice p {
+  margin-top: 0.75rem;
+  max-width: 50rem;
+}
+
+.footer__contacts-text {
+  overflow-wrap: anywhere;
+}
+
+@media (scripting: none) and (width <= 90.0613rem) {
+  .header__overlay:not(.is-active) {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    translate: none;
+    min-width: 0;
+  }
+
+  .header__burger-button {
+    display: none !important;
+  }
+
+  .header__inner {
+    flex-wrap: wrap;
   }
 }

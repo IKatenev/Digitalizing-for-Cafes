@@ -15,6 +15,7 @@
 
   &__title {
     @include fluid-text(36, 28);
+
     margin: 0 auto rem(64);
     text-align: center;
 
@@ -26,11 +27,11 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
     gap: rem(20);
 
     @include tablet {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
     }
 
     @include mobile {
@@ -68,6 +69,7 @@
     font-size: rem(30);
     line-height: 1;
     margin: 0;
+
     @include tablet {
       font-size: rem(24);
     }
@@ -78,6 +80,7 @@
     line-height: 1.2;
     color: var(--gray-20);
     margin: 0;
+
     @include tablet {
       font-size: rem(16);
     }
@@ -116,6 +119,7 @@
 
   &__title {
     @include fluid-text(36, 28);
+
     text-align: center;
     margin: 0;
 
@@ -128,7 +132,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: rem(20);
-
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -185,6 +188,7 @@
   &__card-icon {
     @include square(rem(80));
     @include flex-center;
+
     margin-bottom: rem(24);
     background: url("/src/assets/icons/hexagon-white.svg") center no-repeat;
     color: var(--black);
@@ -192,6 +196,7 @@
 
   &__card-title {
     @include fluid-text(36, 28);
+
     margin: 0;
   }
 
@@ -245,6 +250,7 @@
 
   &__title {
     @include fluid-text(36, 28);
+
     margin: 0 0 rem(8);
     text-align: center;
 
@@ -352,7 +358,7 @@
     align-items: center;
     font-size: rem(20);
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: underline;
     text-underline-offset: rem(2);
     transition: var(--transition);

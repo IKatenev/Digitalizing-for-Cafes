@@ -1,0 +1,74 @@
+<section class="form" id="enquiry">
+  <div class="form__inner">
+    <div class="form__info">
+      <h2 class="form__title">Find out if Absolut POS is right for you</h2>
+      <p class="form__desc">{{formDescription}}</p>
+      <p class="form__privacy" id="privacy-notice">{{privacyText}}</p>
+    </div>
+    <form class="form__fields" data-endpoint="{{formEndpoint}}" novalidate>
+      <noscript><p class="form__message">Enable JavaScript to use this form.</p></noscript>
+      <div class="form__row form__row--dual">
+        <label class="form__field form__field--phone">
+          <input
+            type="tel"
+            autocomplete="tel"
+            aria-label="UK phone number"
+            name="phone"
+            id="phone"
+            maxlength="30"
+            placeholder="e.g. 07700 900123"
+            required
+          />
+        </label>
+        <label class="form__field">
+          <input
+            type="email"
+            autocomplete="email"
+            aria-label="Email address"
+            name="email"
+            id="email"
+            maxlength="254"
+            placeholder="Email address"
+            required
+          />
+        </label>
+      </div>
+
+      <div class="form__row">
+        <label class="form__field">
+          <input
+            type="text"
+            autocomplete="name"
+            aria-label="Your name"
+            name="name"
+            id="name"
+            maxlength="100"
+            placeholder="Your name"
+            required
+          />
+        </label>
+      </div>
+
+      <div class="form__honeypot" aria-hidden="true">
+        <label class="form__field">
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
+        </label>
+      </div>
+
+      <div class="form__row form__row--bottom">
+        <label class="form__checkbox">
+          <input type="checkbox" name="agreement" id="agreement" required />
+          <span class="form__checkmark" aria-hidden="true"></span>
+          <span class="form__checkbox-text">
+            I understand the <br />
+            <a href="#privacy-notice">privacy notice</a>
+          </span>
+        </label>
+        <button class="form__submit btn" type="submit" disabled>
+          <span class="form__submit-text">{{submitLabel}}</span>
+          <span class="form__submit-loader" hidden>Please wait…</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

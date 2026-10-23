@@ -1,6 +1,4 @@
 @use "../abstracts" as *;
-@use "../components" as *;
-@use "../utilities" as *;
 @use "fonts" as *;
 
 body {
@@ -34,6 +32,8 @@ h6,
 
 h1,
 .h1 {
+  font-weight: 500;
+
   @include fluid-text(90, 48);
 
   line-height: 1;

@@ -1,212 +1,81 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO -->
-    <title>%VITE_SITE_TITLE% - Планы</title>
-    <meta name="description" content="%VITE_PLANS_SITE_DESC%" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="%VITE_SITE_TITLE% - Планы" />
-    <meta property="og:description" content="%VITE_PLANS_SITE_DESC%" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="%VITE_SITE_URL%/plans" />
-    <meta property="og:image" content="%VITE_OG_IMAGE%" />
-    <meta property="og:image:alt" content="%VITE_SITE_TITLE%" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="%VITE_SITE_TITLE% - Планы" />
-    <meta name="twitter:description" content="%VITE_PLANS_SITE_DESC%" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="canonical" href="%VITE_SITE_URL%/plans" />
-
-    <!-- Font preloads -->
-    <link rel="preload" href="assets/fonts/TTHoves-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="assets/fonts/TTHoves-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-
-    <!-- Main JS -->
-    <script type="module" src="/src/js/main.js" defer></script>
+    <include src="partials/head.html" />
   </head>
 
   <body>
     <!-- Skip-link for accessibility -->
-    <a href="#main" class="skip-link visually-hidden">Перейти к контенту</a>
+    <a href="#main" class="skip-link">Skip to content</a>
 
     <div class="page-top-bg" aria-hidden="true"></div>
 
     <include src="partials/header.html" />
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero">
         <div class="hero__content">
-          <p class="hero__label">ДЛЯ РЕСТОРАНОВ, КАФЕ, БАРОВ и ритейла</p>
-          <h1 class="hero__title">Сравнение тарифных планов</h1>
+          <p class="hero__label">FOR RESTAURANTS, CAFÉS, BARS AND RETAIL</p>
+          <h1 class="hero__title">Compare our plans</h1>
           <p class="hero__subtitle">
-            Работаем по модели ежемесячной подписки. Без скрытых платежей и условий
+            Simple monthly subscriptions with no hidden fees or conditions.
           </p>
           <div class="hero__actions">
-            <a href="#" class="btn">Попробовать бесплатно</a>
-            <a href="#" class="hero__link">Связаться с нами</a>
+            <a href="#enquiry" class="btn">Try for free</a>
+            <a href="#enquiry" class="hero__link">Contact us</a>
           </div>
         </div>
       </section>
 
       <div class="hero-divider" aria-hidden="true"></div>
 
-      <section class="pricing">
-        <div class="pricing__inner">
-          <div class="pricing__info">
-            <h2 class="pricing__title">Выберите свой тариф</h2>
-            <p class="pricing__desc">
-              Подключитесь сейчас и пользуйтесь системой бесплатно до конца 2023 года!
-            </p>
-            <a href="#" class="pricing__link">Сравнить тарифы→</a>
-          </div>
-          <div class="pricing__cards">
-            <article class="pricing__card pricing__card--base">
-              <h3 class="pricing__card-title">Базовый</h3>
-              <p class="pricing__card-desc">
-                Подходит для самозанятых и микробизнесов до 3-х сотрудников
-              </p>
-              <span class="pricing__card-price">0₽</span>
-              <ul class="pricing__card-features">
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Смартфон — 1
-                </li>
-              </ul>
-              <!-- Исправление валидности: <a> вместо <button> -->
-              <a href="#" class="pricing__card-btn btn">Подключить</a>
-            </article>
-            <article class="pricing__card pricing__card--plus">
-              <h3 class="pricing__card-title">Плюс</h3>
-              <p class="pricing__card-desc">
-                Для заведений до 150 кв.м. и до 5-и сотрудников зала в смене (официанты,
-                администраторы, хостес)
-              </p>
-              <span class="pricing__card-price">4 990₽</span>
-              <ul class="pricing__card-features">
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Смартфон — 3
-                </li>
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Планшет — 1
-                </li>
-              </ul>
-              <a href="#" class="pricing__card-btn btn">30 дней бесплатно</a>
-            </article>
-            <article class="pricing__card pricing__card--business">
-              <h3 class="pricing__card-title">Бизнес</h3>
-              <p class="pricing__card-desc">
-                Для крупных заведений с несколькими залами, производственными цехами, складами и от
-                5 сотрудников (официанты, администраторы, хостес)
-              </p>
-              <span class="pricing__card-price">Индивидуальная цена</span>
-              <ul class="pricing__card-features">
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Смартфон — от 10
-                </li>
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Планшет — от 5
-                </li>
-              </ul>
-              <a href="#" class="pricing__card-btn btn">30 дней бесплатно</a>
-            </article>
-          </div>
-        </div>
-      </section>
+      <include src="partials/pricing.html" />
 
       <div class="divider" aria-hidden="true"></div>
 
-      <section class="pricing-comparasion">
+      <section class="pricing-comparasion" id="comparison" aria-label="Plan comparison">
         <div class="pricing-comparasion__inner">
-          <h2 class="pricing-comparasion__title">Сравните тарифные планы</h2>
+          <h2 class="pricing-comparasion__title">Compare plans</h2>
 
-          <!-- Main section title -->
           <h3 class="pricing-comparasion__section-title">
-            Основные <br />
-            характеристики
+            Key <br />
+            features
           </h3>
 
           <!-- Mobile Tabs -->
-          <div class="pricing-comparasion__tabs" role="tablist">
+          <div class="pricing-comparasion__tabs" role="tablist" aria-label="Choose a plan">
             <button
               class="pricing-comparasion__tab pricing-comparasion__tab--active"
               data-tab="basic"
+              id="tab-basic"
+              tabindex="0"
               role="tab"
               aria-selected="true"
               aria-controls="column-basic"
             >
-              Базовый
+              Basic
             </button>
             <button
               class="pricing-comparasion__tab"
               data-tab="plus"
+              id="tab-plus"
+              tabindex="-1"
               role="tab"
               aria-selected="false"
               aria-controls="column-plus"
             >
-              Плюс
+              Plus
             </button>
             <button
               class="pricing-comparasion__tab"
               data-tab="business"
+              id="tab-business"
+              tabindex="-1"
               role="tab"
               aria-selected="false"
               aria-controls="column-business"
             >
-              Бизнес
+              Business
             </button>
           </div>
 
@@ -214,72 +83,74 @@
           <div class="pricing-comparasion__grid">
             <!-- Column 0: Headers -->
             <div class="pricing-comparasion__column pricing-comparasion__column--headers">
+              <h3 class="pricing-comparasion__plan-name" aria-hidden="true">Feature</h3>
               <div class="pricing-comparasion__section">
+                <h3 class="pricing-comparasion__section-title--inner">Key features</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Пробный период</span>
+                  <span class="pricing-comparasion__label">Free trial</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
+                  <span class="pricing-comparasion__label">Orders</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Каталог</span>
+                  <span class="pricing-comparasion__label">Catalogue</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Техподдержка</span>
+                  <span class="pricing-comparasion__label">Technical support</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Кол-во сотрудников</span>
+                  <span class="pricing-comparasion__label">Team size</span>
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Включает устройства</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Included devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
-                </div>
-              </div>
-
-              <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Дополнительные устройства</h3>
-
-                <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
-                </div>
-
-                <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Функции</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Additional devices</h3>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Аналитика</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
+                </div>
+              </div>
+
+              <div class="pricing-comparasion__section">
+                <h3 class="pricing-comparasion__section-title--inner">Features</h3>
+
+                <div class="pricing-comparasion__row">
+                  <span class="pricing-comparasion__label">Analytics</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Инвентаризация</span>
+                  <span class="pricing-comparasion__label">Orders</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Маркетинг</span>
+                  <span class="pricing-comparasion__label">Stocktaking</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Лояльность</span>
+                  <span class="pricing-comparasion__label">Marketing</span>
+                </div>
+
+                <div class="pricing-comparasion__row">
+                  <span class="pricing-comparasion__label">Loyalty</span>
                 </div>
               </div>
             </div>
@@ -289,70 +160,76 @@
               class="pricing-comparasion__column pricing-comparasion__column--basic"
               id="column-basic"
               data-column="basic"
+              role="tabpanel"
+              aria-labelledby="plan-basic"
+              tabindex="0"
             >
+              <h3 class="pricing-comparasion__plan-name" id="plan-basic">Basic</h3>
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Основные характеристики</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Key features</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Пробный период</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Free trial</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Orders</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Каталог</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Catalogue</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Техподдержка</span>
+                  <span class="pricing-comparasion__label">Technical support</span>
                   <span class="pricing-comparasion__value">12/7</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Кол-во сотрудников</span>
-                  <span class="pricing-comparasion__value">3 сотрудника</span>
+                  <span class="pricing-comparasion__label">Team size</span>
+                  <span class="pricing-comparasion__value">3 employees</span>
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Включает устройства</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Included devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--cross"
                     >✕</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
                       width="16"
                       height="16"
                     />
-                    1 устройство</span
+                    1 device</span
                   >
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Дополнительные устройства</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Additional devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--cross"
                     >✕</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--cross"
                     >✕</span
                   >
@@ -360,11 +237,16 @@
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Функции</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Features</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Аналитика</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Analytics</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -374,9 +256,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Orders</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -386,9 +273,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Инвентаризация</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Stocktaking</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -398,9 +290,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Маркетинг</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Marketing</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -410,9 +307,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Лояльность</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Loyalty</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -428,104 +330,133 @@
               class="pricing-comparasion__column pricing-comparasion__column--plus"
               id="column-plus"
               data-column="plus"
+              role="tabpanel"
+              aria-labelledby="plan-plus"
+              tabindex="0"
             >
+              <h3 class="pricing-comparasion__plan-name" id="plan-plus">Plus</h3>
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Основные характеристики</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Key features</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Пробный период</span>
-                  <span class="pricing-comparasion__value">30 дней</span>
+                  <span class="pricing-comparasion__label">Free trial</span>
+                  <span class="pricing-comparasion__value">30 days</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Orders</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Каталог</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Catalogue</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Техподдержка</span>
+                  <span class="pricing-comparasion__label">Technical support</span>
                   <span class="pricing-comparasion__value">12/7</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Кол-во сотрудников</span>
-                  <span class="pricing-comparasion__value">5 сотрудников</span>
+                  <span class="pricing-comparasion__label">Team size</span>
+                  <span class="pricing-comparasion__value">5 employees</span>
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Включает устройства</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Included devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true" /> 1
-                    устройство</span
+                    ><img
+                      loading="lazy"
+                      decoding="async"
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    1 device</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
                       width="16"
                       height="16"
                     />
-                    3 устройства</span
+                    3 devices</span
                   >
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Дополнительные устройства</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Additional devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
                       width="16"
                       height="16"
                     />
-                    2 990 ₽ / шт</span
+                    £29.90 each</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
                       width="16"
                       height="16"
                     />
-                    790 ₽ / шт</span
+                    £7.90 each</span
                   >
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Функции</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Features</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Аналитика</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img src="src/assets/icons/checkmark-icon.svg" alt="" aria-hidden="true"
+                  <span class="pricing-comparasion__label">Analytics</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
+                    ><img
+                      loading="lazy"
+                      decoding="async"
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
                   /></span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Orders</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -535,9 +466,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Инвентаризация</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Stocktaking</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -547,9 +483,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Маркетинг</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Marketing</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -559,9 +500,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Лояльность</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Loyalty</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -577,103 +523,120 @@
               class="pricing-comparasion__column pricing-comparasion__column--business"
               id="column-business"
               data-column="business"
+              role="tabpanel"
+              aria-labelledby="plan-business"
+              tabindex="0"
             >
+              <h3 class="pricing-comparasion__plan-name" id="plan-business">Business</h3>
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Основные характеристики</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Key features</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Пробный период</span>
-                  <span class="pricing-comparasion__value">30 дней</span>
+                  <span class="pricing-comparasion__label">Free trial</span>
+                  <span class="pricing-comparasion__value">30 days</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Orders</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Каталог</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Catalogue</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Техподдержка</span>
+                  <span class="pricing-comparasion__label">Technical support</span>
                   <span class="pricing-comparasion__value">12/7</span>
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Кол-во сотрудников</span>
-                  <span class="pricing-comparasion__value">Не ограничено</span>
+                  <span class="pricing-comparasion__label">Team size</span>
+                  <span class="pricing-comparasion__value">Unlimited</span>
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Включает устройства</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Included devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
                       width="16"
                       height="16"
                     />
-                    от 5 устройств</span
+                    5+ devices</span
                   >
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
+                  <span class="pricing-comparasion__label">Smartphone</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
                       width="16"
                       height="16"
                     />
-                    от 10 устройств</span
-                  >
-                </div>
-              </div>
-
-              <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Дополнительные устройства</h3>
-                <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Планшет</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img
-                      src="src/assets/icons/checkmark-icon.svg"
-                      alt=""
-                      aria-hidden="true"
-                      width="16"
-                      height="16"
-                    />
-                    2 990 ₽ / шт</span
-                  >
-                </div>
-
-                <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Смартфон</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
-                    ><img
-                      src="src/assets/icons/checkmark-icon.svg"
-                      alt=""
-                      aria-hidden="true"
-                      width="16"
-                      height="16"
-                    />
-                    790 ₽ / шт</span
+                    10+ devices</span
                   >
                 </div>
               </div>
 
               <div class="pricing-comparasion__section">
-                <h3 class="pricing-comparasion__section-title--inner">Функции</h3>
+                <h3 class="pricing-comparasion__section-title--inner">Additional devices</h3>
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Аналитика</span>
+                  <span class="pricing-comparasion__label">Tablet</span>
                   <span class="pricing-comparasion__value pricing-comparasion__value--check"
                     ><img
+                      loading="lazy"
+                      decoding="async"
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    £29.90 each</span
+                  >
+                </div>
+
+                <div class="pricing-comparasion__row">
+                  <span class="pricing-comparasion__label">Smartphone</span>
+                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                    ><img
+                      loading="lazy"
+                      decoding="async"
+                      src="src/assets/icons/checkmark-icon.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
+                    £7.90 each</span
+                  >
+                </div>
+              </div>
+
+              <div class="pricing-comparasion__section">
+                <h3 class="pricing-comparasion__section-title--inner">Features</h3>
+                <div class="pricing-comparasion__row">
+                  <span class="pricing-comparasion__label">Analytics</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
+                    ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -683,9 +646,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Заказы</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Orders</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -695,9 +663,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Инвентаризация</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Stocktaking</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -707,9 +680,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Маркетинг</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Marketing</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -719,9 +697,14 @@
                 </div>
 
                 <div class="pricing-comparasion__row">
-                  <span class="pricing-comparasion__label">Лояльность</span>
-                  <span class="pricing-comparasion__value pricing-comparasion__value--check"
+                  <span class="pricing-comparasion__label">Loyalty</span>
+                  <span
+                    class="pricing-comparasion__value pricing-comparasion__value--check"
+                    role="img"
+                    aria-label="Included"
                     ><img
+                      loading="lazy"
+                      decoding="async"
                       src="src/assets/icons/checkmark-icon.svg"
                       alt=""
                       aria-hidden="true"
@@ -739,11 +722,13 @@
 
       <section class="plans-features">
         <div class="plans-features__inner">
-          <h2 class="plans-features__title">Доступно в любом тарифе</h2>
+          <h2 class="plans-features__title">Included in every plan</h2>
           <div class="plans-features__cards">
             <article class="plans-features__card">
               <div class="plans-features__card-icon plans-features__card-icon--green">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src="/src/assets/icons/support.svg"
                   alt=""
                   aria-hidden="true"
@@ -751,14 +736,16 @@
                   height="38"
                 />
               </div>
-              <h3 class="plans-features__card-title">Служба поддержки</h3>
+              <h3 class="plans-features__card-title">Customer support</h3>
               <p class="plans-features__card-desc">
-                Быстро ответит на любые вопросы<br />и поможет разобраться
+                Get quick answers to your questions<br />and help when you need it
               </p>
             </article>
             <article class="plans-features__card">
               <div class="plans-features__card-icon plans-features__card-icon--purple">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src="/src/assets/icons/offline.svg"
                   alt=""
                   aria-hidden="true"
@@ -766,10 +753,10 @@
                   height="39"
                 />
               </div>
-              <h3 class="plans-features__card-title">Оффлайн режим</h3>
+              <h3 class="plans-features__card-title">Offline mode</h3>
               <p class="plans-features__card-desc">
-                Продолжайте продавать, даже при перебоях с интернетом. Это критично в пиковые часы,
-                когда важна каждая минута
+                Keep selling when your internet connection drops. Stay productive during busy
+                periods when every minute counts.
               </p>
             </article>
           </div>
@@ -779,82 +766,23 @@
       <section class="cta">
         <div class="cta__inner">
           <div class="cta__content">
-            <!-- Исправление a11y: декоративные элементы -->
             <div class="cta__decor cta__decor--1" aria-hidden="true"></div>
             <div class="cta__decor cta__decor--2" aria-hidden="true"></div>
             <div class="cta__text">
-              <h2 class="cta__title cta__title--plans">Поможем выбрать <br />тариф</h2>
+              <h2 class="cta__title cta__title--plans">Let us help you <br />choose a plan</h2>
               <p class="cta__desc">
-                Попробуйте версию <br />
-                с полным функционалом 30 дней <br />
-                бесплатно
+                Explore every feature <br />
+                with a 30-day trial, <br />
+                for free
               </p>
             </div>
 
-            <!-- Исправление валидности: <a> вместо <button> -->
-            <a href="#" class="cta__btn-tablet btn btn--white">Попробовать Absolut POS</a>
+            <a href="#enquiry" class="cta__btn-tablet btn btn--white">Try Absolut POS</a>
           </div>
         </div>
       </section>
 
-      <section class="form">
-        <div class="form__inner">
-          <div class="form__info">
-            <h2 class="form__title">Узнайте, подойдет ли вам Absolut POS</h2>
-            <p class="form__desc">
-              Не гарантируем исправную работу системы с подключенным оборудованием ниже
-              рекомендуемых минимальных требований. Оставьте заявку и мы поможем вам подобрать
-              подходящие устройства
-            </p>
-          </div>
-          <form class="form__fields" novalidate>
-            <div class="form__row form__row--dual">
-              <label class="form__field form__field--phone">
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  placeholder="+7 (___) ___ __-__"
-                  required
-                />
-              </label>
-              <label class="form__field">
-                <input type="email" name="email" id="email" placeholder="Почта" required />
-              </label>
-            </div>
-
-            <div class="form__row">
-              <label class="form__field">
-                <input type="text" name="name" id="name" placeholder="Как вас зовут" required />
-              </label>
-            </div>
-
-            <!-- Наш honeypot -->
-            <div class="form__honeypot" aria-hidden="true">
-              <label class="form__field">
-                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
-              </label>
-            </div>
-
-            <div class="form__row form__row--bottom">
-              <label class="form__checkbox">
-                <input type="checkbox" name="agreement" id="agreement" required />
-                <span class="form__checkmark"></span>
-                <span class="form__checkbox-text">
-                  Я принимаю условия <br />
-                  <a href="#" target="_blank" rel="noopener noreferrer"
-                    >Политики обработки персональных данных</a
-                  >
-                </span>
-              </label>
-              <button class="form__submit btn" type="submit" disabled>
-                <span class="form__submit-text">Отправить</span>
-                <span class="form__submit-loader" hidden>Отправка...</span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+      <include src="partials/form.html" />
     </main>
 
     <include src="partials/footer.html" />

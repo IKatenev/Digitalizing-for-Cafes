@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.hero-divider {
+  display: block;
+  height: rem(64);
+  background: var(--white);
+  border-radius: rem(32) rem(32) 0 0;
+  z-index: 1;
+}

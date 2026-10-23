@@ -1,266 +1,118 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO -->
-    <title>%VITE_SITE_TITLE% - Цены</title>
-    <meta name="description" content="%VITE_PRICING_SITE_DESC%" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="%VITE_SITE_TITLE% - Цены" />
-    <meta property="og:description" content="%VITE_PRICING_SITE_DESC%" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="%VITE_SITE_URL%/pricing" />
-    <meta property="og:image" content="%VITE_OG_IMAGE%" />
-    <meta property="og:image:alt" content="%VITE_SITE_TITLE%" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="%VITE_SITE_TITLE% - Цены" />
-    <meta name="twitter:description" content="%VITE_PRICING_SITE_DESC%" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="canonical" href="%VITE_SITE_URL%/pricing" />
-
-    <!-- Font preloads -->
-    <link
-      rel="preload"
-      href="assets/fonts/TTHoves-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="assets/fonts/TTHoves-Medium.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-
-    <!-- Main JS -->
-    <script type="module" src="/src/js/main.js" defer></script>
+    <include src="partials/head.html" />
   </head>
 
   <body>
     <!-- Skip-link for accessibility -->
-    <a href="#main" class="skip-link visually-hidden">Перейти к контенту</a>
+    <a href="#main" class="skip-link">Skip to content</a>
 
     <div class="page-top-bg" aria-hidden="true"></div>
 
     <include src="partials/header.html" />
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero">
         <div class="hero__content">
-          <p class="hero__label">ДЛЯ РЕСТОРАНОВ, КАФЕ, БАРОВ и ритейла</p>
-          <h1 class="hero__title">Цена, которая помогает бизнесу расти</h1>
+          <p class="hero__label">FOR RESTAURANTS, CAFÉS, BARS AND RETAIL</p>
+          <h1 class="hero__title">Pricing that helps your business grow</h1>
           <p class="hero__subtitle">
-            Начните бесплатно и добавляйте инструменты по мере необходимости или ознакомьтесь с
-            нашими планами, чтобы получить все, что вам нужно, сразу
+            Start for free and add tools as you grow, or choose a plan with everything you need from
+            day one.
           </p>
           <div class="hero__actions">
-            <a href="#" class="btn">Попробовать бесплатно</a>
-            <a href="#" class="hero__link">Связаться с нами</a>
+            <a href="#enquiry" class="btn">Try for free</a>
+            <a href="#enquiry" class="hero__link">Contact us</a>
           </div>
         </div>
       </section>
 
       <div class="hero-divider" aria-hidden="true"></div>
 
-      <section class="pricing">
-        <div class="pricing__inner">
-          <div class="pricing__info">
-            <h2 class="pricing__title">Выберите свой тариф</h2>
-            <p class="pricing__desc">
-              Подключитесь сейчас и пользуйтесь системой бесплатно до конца 2023 года!
-            </p>
-            <a href="#" class="pricing__link">Сравнить тарифы→</a>
-          </div>
-          <div class="pricing__cards">
-            <article class="pricing__card pricing__card--base">
-              <h3 class="pricing__card-title">Базовый</h3>
-              <p class="pricing__card-desc">
-                Подходит для самозанятых и микробизнесов до 3-х сотрудников
-              </p>
-              <span class="pricing__card-price">0₽</span>
-              <ul class="pricing__card-features">
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Смартфон — 1
-                </li>
-              </ul>
-              <!-- Исправление валидности: <a> вместо <button> -->
-              <a href="#" class="pricing__card-btn btn">Подключить</a>
-            </article>
-            <article class="pricing__card pricing__card--plus">
-              <h3 class="pricing__card-title">Плюс</h3>
-              <p class="pricing__card-desc">
-                Для заведений до 150 кв.м. и до 5-и сотрудников зала в смене (официанты,
-                администраторы, хостес)
-              </p>
-              <span class="pricing__card-price">4 990₽</span>
-              <ul class="pricing__card-features">
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Смартфон — 3
-                </li>
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Планшет — 1
-                </li>
-              </ul>
-              <a href="#" class="pricing__card-btn btn">30 дней бесплатно</a>
-            </article>
-            <article class="pricing__card pricing__card--business">
-              <h3 class="pricing__card-title">Бизнес</h3>
-              <p class="pricing__card-desc">
-                Для крупных заведений с несколькими залами, производственными цехами, складами и от
-                5 сотрудников (официанты, администраторы, хостес)
-              </p>
-              <span class="pricing__card-price">Индивидуальная цена</span>
-              <ul class="pricing__card-features">
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Смартфон — от 10
-                </li>
-                <li class="pricing__card-feature">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M4 8L7 11L12 5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Планшет — от 5
-                </li>
-              </ul>
-              <a href="#" class="pricing__card-btn btn">30 дней бесплатно</a>
-            </article>
-          </div>
-        </div>
-      </section>
+      <include src="partials/pricing.html" />
 
       <div class="divider" aria-hidden="true"></div>
 
-      <section class="tools">
+      <section class="tools" id="tools">
         <div class="tools__inner">
-          <h2 class="tools__title">Инструменты, которые вы можете использовать</h2>
+          <h2 class="tools__title">Tools to help you do more</h2>
           <div class="tools__grid">
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">Роли и доступы</h3>
+                <h3 class="tools__card-title">Roles and permissions</h3>
                 <p class="tools__card-desc">
-                  Настраивайте удобные для вас роли и присваивайте их любым сотрудникам
+                  Create roles that suit your business and assign them to members of your team.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">QR меню</h3>
+                <h3 class="tools__card-title">QR code menu</h3>
                 <p class="tools__card-desc">
-                  Запускайте онлайн меню и автоматически генерируйте QR код
+                  Publish your menu online and automatically generate a QR code.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">Эквайринг и 3в1</h3>
+                <h3 class="tools__card-title">Payments and terminals</h3>
                 <p class="tools__card-desc">
-                  Мы интегрируемая со всеми терминалами на протоколе smart sale и aqsi
+                  Ask us about payment terminal compatibility and integrations available for your
+                  business.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">Инвентаризация</h3>
+                <h3 class="tools__card-title">Stocktaking</h3>
                 <p class="tools__card-desc">
-                  Удобная инвентаризация которую можно быстро провести с мобильного устройства
+                  Carry out quick, straightforward stocktakes from your mobile device.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
                 <h3 class="tools__card-title">Absolut POS</h3>
                 <p class="tools__card-desc">
-                  Начните продавать свои товары с любого устройства — мобильный телефон, 3в1,
-                  планшет, моноблок — без специальной подготовки
+                  Start selling from a smartphone, 3-in-1 terminal, tablet or all-in-one POS, with
+                  no specialist training.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">Аналитика</h3>
+                <h3 class="tools__card-title">Analytics</h3>
                 <p class="tools__card-desc">
-                  Специализированные отчеты в реальном времени — выручка, прибыл, фильтрация по
-                  категориям, движение товаров, учет затрат клиентов и акций
+                  Get real-time reports on revenue, profit, product categories, stock movements,
+                  customer spending and promotions.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">Лояльность</h3>
+                <h3 class="tools__card-title">Loyalty</h3>
                 <p class="tools__card-desc">
-                  Удерживайте клиентов и увеличивайте ключевые метрики с удобной и простой системой
-                  лояльности
+                  Keep customers coming back and improve performance with a simple loyalty
+                  programme.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
             <article class="tools__card">
               <div class="tools__card-text">
-                <h3 class="tools__card-title">Аналитика по товарам</h3>
+                <h3 class="tools__card-title">Product insights</h3>
                 <p class="tools__card-desc">
-                  Узнайте как меняется цена у ваших поставщиков и как это влияет на вашу
-                  маржинальность
+                  Track changes in supplier prices and understand how they affect your margins.
                 </p>
               </div>
-              <span class="tools__card-price">0 ₽/мес</span>
+              <span class="tools__card-price">£0/month</span>
             </article>
           </div>
         </div>
@@ -271,12 +123,14 @@
       <section class="acquiring">
         <div class="acquiring__inner">
           <div class="acquiring__header">
-            <h2 class="acquiring__title">Подключение эквайринга и комиссии</h2>
+            <h2 class="acquiring__title">Payment options and fees</h2>
           </div>
           <div class="acquiring__cards">
             <article class="acquiring__card acquiring__card--blue">
               <div class="acquiring__card-icon">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src="src/assets/icons/store.svg"
                   alt=""
                   aria-hidden="true"
@@ -284,17 +138,19 @@
                   height="48"
                 />
               </div>
-              <h3 class="acquiring__card-title">Торговый эквайринг</h3>
+              <h3 class="acquiring__card-title">In-person payments</h3>
               <div class="acquiring__card-bottom">
                 <p class="acquiring__card-desc">
-                  Когда клиент оплачивает счет через тап или пин код.
+                  When your customer pays by contactless or chip and PIN.
                 </p>
-                <span class="acquiring__card-rate">2.2% за транзакцию или 0.4% через СБП</span>
+                <span class="acquiring__card-rate">Fees depend on your payment provider</span>
               </div>
             </article>
             <article class="acquiring__card acquiring__card--purple">
               <div class="acquiring__card-icon">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src="src/assets/icons/phone.svg"
                   alt=""
                   aria-hidden="true"
@@ -302,18 +158,19 @@
                   height="48"
                 />
               </div>
-              <h3 class="acquiring__card-title">Мобильное приложение</h3>
+              <h3 class="acquiring__card-title">Mobile app</h3>
               <div class="acquiring__card-bottom">
                 <p class="acquiring__card-desc">
-                  Когда ваш клиент делает покупку через мобильное приложение в заведении или на
-                  доставку.
+                  When your customer orders through the app, at your venue or for delivery.
                 </p>
-                <span class="acquiring__card-rate">2.99% за транзакцию или 0.4% через СБП</span>
+                <span class="acquiring__card-rate">Fees depend on your payment provider</span>
               </div>
             </article>
             <article class="acquiring__card acquiring__card--orange">
               <div class="acquiring__card-icon">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src="src/assets/icons/globus.svg"
                   alt=""
                   aria-hidden="true"
@@ -321,12 +178,12 @@
                   height="48"
                 />
               </div>
-              <h3 class="acquiring__card-title">Онлайн</h3>
+              <h3 class="acquiring__card-title">Online</h3>
               <div class="acquiring__card-bottom">
                 <p class="acquiring__card-desc">
-                  Когда ваш клиент делает покупку через сайт на самовывоз или доставку.
+                  When your customer orders through your website for collection or delivery.
                 </p>
-                <span class="acquiring__card-rate">2.99% за транзакцию или 0.4% через СБП</span>
+                <span class="acquiring__card-rate">Fees depend on your payment provider</span>
               </div>
             </article>
           </div>
@@ -335,27 +192,27 @@
 
       <div class="divider" aria-hidden="true"></div>
 
-      <section class="plans">
+      <section class="plans" id="business-plans">
         <div class="plans__inner">
           <header class="plans__header">
-            <h2 class="plans__title">Планы для разных типов бизнеса</h2>
+            <h2 class="plans__title">Plans for every kind of business</h2>
           </header>
           <div class="plans__cards">
             <article class="plans__card">
               <div class="plans__card-preview">
                 <img
-                  src="src/assets/images/Business-image-1.webp?as=webp&w=440"
-                  alt="Точка на вынос"
+                  src="src/assets/images/Business-image-1.webp"
+                  alt="Takeaway"
                   loading="lazy"
                   width="440"
                   height="330"
                   decoding="async"
                 />
               </div>
-              <h3 class="plans__card-title">Точка на вынос</h3>
+              <h3 class="plans__card-title">Takeaway</h3>
               <p class="plans__card-desc">
-                Настройте свой бизнес и начните продавать сразу без дополнительных трудностей. Наша
-                техническая поддержка всегда на связи.
+                Set up your business and start selling without the hassle. Our technical support
+                team is here to help.
               </p>
               <ul class="plans__card-features">
                 <li class="plans__card-feature">
@@ -368,7 +225,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Бесплатная версия</span>
+                  <span>Free plan</span>
                 </li>
                 <li class="plans__card-feature">
                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" aria-hidden="true">
@@ -380,7 +237,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Работа с любого смартфон Android</span>
+                  <span>Works on any compatible Android smartphone</span>
                 </li>
                 <li class="plans__card-feature">
                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" aria-hidden="true">
@@ -392,27 +249,26 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Гибкая система работы с гостями</span>
+                  <span>Flexible customer management</span>
                 </li>
               </ul>
-              <a href="#" class="plans__card-link">Подробнее→</a>
+              <a href="plans.html#comparison" class="plans__card-link">Learn more →</a>
             </article>
             <article class="plans__card">
               <div class="plans__card-preview">
                 <img
-                  src="src/assets/images/Business-image-2.webp?as=webp&w=440"
-                  alt="Ресторан"
+                  src="src/assets/images/Business-image-2.webp"
+                  alt="Restaurant"
                   loading="lazy"
                   width="440"
                   height="330"
                   decoding="async"
                 />
               </div>
-              <h3 class="plans__card-title">Ресторан</h3>
+              <h3 class="plans__card-title">Restaurant</h3>
               <p class="plans__card-desc">
-                Управляйте вашим заведением более эффективно. Используйте специальную аналитику и
-                приложение для официантов для фронт офиса, и кухонный модуль и отчеты по
-                маргинальности блюд для бек офиса.
+                Run your venue more efficiently with front-of-house analytics and handheld ordering,
+                plus kitchen tools and dish profitability reports.
               </p>
               <ul class="plans__card-features">
                 <li class="plans__card-feature">
@@ -425,7 +281,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Продвинутые POS функции</span>
+                  <span>Advanced POS features</span>
                 </li>
                 <li class="plans__card-feature">
                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" aria-hidden="true">
@@ -437,7 +293,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Мобильный официант</span>
+                  <span>Handheld ordering</span>
                 </li>
                 <li class="plans__card-feature">
                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" aria-hidden="true">
@@ -449,26 +305,26 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Работа с доставкой и отчетами</span>
+                  <span>Delivery management and reporting</span>
                 </li>
               </ul>
-              <a href="#" class="plans__card-link">Подробнее→</a>
+              <a href="plans.html#comparison" class="plans__card-link">Learn more →</a>
             </article>
             <article class="plans__card">
               <div class="plans__card-preview">
                 <img
-                  src="src/assets/images/Business-image-3.webp?as=webp&w=440"
-                  alt="Магазин"
+                  src="src/assets/images/Business-image-3.webp"
+                  alt="Shop"
                   loading="lazy"
                   width="440"
                   height="330"
                   decoding="async"
                 />
               </div>
-              <h3 class="plans__card-title">Магазин</h3>
+              <h3 class="plans__card-title">Shop</h3>
               <p class="plans__card-desc">
-                Все инструменты которые вам нужны для управления небольшим магазином. Проведение
-                инвентаризаций, детальные отчеты и графики продаж, доступ с любого устройства.
+                Everything you need to run a small shop: stocktaking, detailed reports and sales
+                charts, accessible from any device.
               </p>
               <ul class="plans__card-features">
                 <li class="plans__card-feature">
@@ -481,7 +337,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Продвинутые отчеты и графики</span>
+                  <span>Advanced reports and charts</span>
                 </li>
                 <li class="plans__card-feature">
                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" aria-hidden="true">
@@ -493,7 +349,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Гибкая система ввода товаров</span>
+                  <span>Flexible product entry</span>
                 </li>
                 <li class="plans__card-feature">
                   <svg width="20" height="23" viewBox="0 0 20 23" fill="none" aria-hidden="true">
@@ -505,10 +361,10 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <span>Работа с минимальным набором оборудования</span>
+                  <span>Get started with minimal equipment</span>
                 </li>
               </ul>
-              <a href="#" class="plans__card-link">Подробнее→</a>
+              <a href="plans.html#comparison" class="plans__card-link">Learn more →</a>
             </article>
           </div>
         </div>
@@ -516,338 +372,15 @@
 
       <div class="divider" aria-hidden="true"></div>
 
-      <section class="equipment">
-        <div class="equipment__inner">
-          <div class="equipment__header">
-            <h2 class="equipment__title">Гибкие предложения по оборудованию</h2>
-            <p class="equipment__desc">
-              Создайте свой идеальный комплект POS-оборудования, который прост в использовании и
-              всегда синхронизирован.
-            </p>
-          </div>
-          <div class="equipment__cards">
-            <article class="equipment__card">
-              <div class="equipment__card-preview">
-                <img
-                  src="src/assets/images/Hardware-image-1.webp?as=webp&w=376"
-                  alt="Терминал 3 в 1"
-                  width="376"
-                  height="376"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="equipment__card-header">
-                <h3 class="equipment__card-title">Терминал 3 в 1</h3>
-              </div>
-              <ul class="equipment__card-features">
-                <li class="equipment__card-feature">
-                  <!-- Исправление a11y: aria-hidden на декоративной иконке -->
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Оплаты картой</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Оплаты через СБП</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Пробитие заказов</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Печать фискальных чеков</span>
-                </li>
-              </ul>
-              <!-- Исправление a11y: alt="" внутри кнопки с aria-label -->
-              <button class="equipment__card-btn" type="button" aria-label="Подробнее">
-                <img src="src/assets/icons/plus-icon.svg" alt="" width="14" height="14" />
-              </button>
-            </article>
-            <article class="equipment__card">
-              <div class="equipment__card-preview">
-                <img
-                  src="src/assets/images/Hardware-image-2.webp?as=webp&w=376"
-                  alt="Кассовая станция"
-                  width="376"
-                  height="376"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="equipment__card-header">
-                <h3 class="equipment__card-title">Кассовая станция</h3>
-              </div>
-              <ul class="equipment__card-features">
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Планшет 11" HD 1080</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Специальная док станция</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Работа с мобильными официантами</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Печать фискальных чеков</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Печать пречеков</span>
-                </li>
-              </ul>
-              <button class="equipment__card-btn" type="button" aria-label="Подробнее">
-                <img src="src/assets/icons/plus-icon.svg" alt="" width="14" height="14" />
-              </button>
-            </article>
-            <article class="equipment__card">
-              <div class="equipment__card-preview">
-                <img
-                  src="src/assets/images/Hardware-image-3.webp?as=webp&w=376"
-                  alt="Absolut моноблок"
-                  width="376"
-                  height="376"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="equipment__card-header">
-                <h3 class="equipment__card-title">Absolut моноблок</h3>
-              </div>
-              <ul class="equipment__card-features">
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Моноблок 15" HD 1080p</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Опционально второй экран</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Кухонный терминал</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Печать фискальных чеков</span>
-                </li>
-                <li class="equipment__card-feature">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path
-                      d="M2 7L5.5 11L12 3"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Печать пречеков</span>
-                </li>
-              </ul>
-              <button class="equipment__card-btn" type="button" aria-label="Подробнее">
-                <img src="src/assets/icons/plus-icon.svg" alt="" width="14" height="14" />
-              </button>
-            </article>
-          </div>
-        </div>
-      </section>
+      <include src="partials/equipment.html" />
 
       <div class="divider" aria-hidden="true"></div>
 
-      <section class="support-contacts">
-        <div class="support-contacts__inner">
-          <div class="support-contacts__info">
-            <h2 class="support-contacts__title">Возникли вопросы</h2>
-            <p class="support-contacts__desc">
-              Найдите ответы и помощь по любым техническим и операционным вопросам или напишите в
-              службу поддержки
-            </p>
-          </div>
-          <div class="support-contacts__cards">
-            <a href="#" class="support-contacts__card">
-              <span class="support-contacts__card-icon">
-                <img src="src/assets/icons/knowledge.svg" alt="" />
-              </span>
-              <span class="support-contacts__card-title">База знаний Absolut↗</span>
-            </a>
-            <a href="#" class="support-contacts__card">
-              <span class="support-contacts__card-icon">
-                <img src="src/assets/icons/telegram.svg" alt="" />
-              </span>
-              <span class="support-contacts__card-title">Служба поддержки в Телеграм↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <include src="partials/support-contacts.html" />
 
       <div class="divider" aria-hidden="true"></div>
 
-      <section class="form">
-        <div class="form__inner">
-          <div class="form__info">
-            <h2 class="form__title">Узнайте, подойдет ли вам Absolut POS</h2>
-            <p class="form__desc">
-              Не гарантируем исправную работу системы с подключенным оборудованием ниже
-              рекомендуемых минимальных требований. Оставьте заявку и мы поможем вам подобрать
-              подходящие устройства
-            </p>
-          </div>
-          <form class="form__fields" novalidate>
-            <div class="form__row form__row--dual">
-              <label class="form__field form__field--phone">
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  placeholder="+7 (___) ___ __-__"
-                  required
-                />
-              </label>
-              <label class="form__field">
-                <input type="email" name="email" id="email" placeholder="Почта" required />
-              </label>
-            </div>
-
-            <div class="form__row">
-              <label class="form__field">
-                <input type="text" name="name" id="name" placeholder="Как вас зовут" required />
-              </label>
-            </div>
-
-            <!-- Наш honeypot -->
-            <div class="form__honeypot" aria-hidden="true">
-              <label class="form__field">
-                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
-              </label>
-            </div>
-
-            <div class="form__row form__row--bottom">
-              <label class="form__checkbox">
-                <input type="checkbox" name="agreement" id="agreement" required />
-                <span class="form__checkmark"></span>
-                <span class="form__checkbox-text">
-                  Я принимаю условия <br />
-                  <a href="#" target="_blank" rel="noopener noreferrer"
-                    >Политики обработки персональных данных</a
-                  >
-                </span>
-              </label>
-              <button class="form__submit btn" type="submit" disabled>
-                <span class="form__submit-text">Отправить</span>
-                <span class="form__submit-loader" hidden>Отправка...</span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+      <include src="partials/form.html" />
     </main>
 
     <include src="partials/footer.html" />

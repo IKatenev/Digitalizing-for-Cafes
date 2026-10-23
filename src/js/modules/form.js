@@ -1,288 +1,134 @@
 class FormHandler {
   constructor(formElement) {
     this.form = formElement;
-    this.formData = {};
-    this.startTime = null;
-    this.minFillTime = 1500;
-
-    this.patterns = {
-      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      phone: /^\+7 \(\d{3}\) \d{3} \d{2}-\d{2}$/,
-    };
-
-    this.init();
-  }
-
-  init() {
+    this.message = null;
+    this.endpoint = this.form.dataset.endpoint || "";
+    this.submitting = false;
     this.bindEvents();
-    this.startTime = Date.now();
+    this.updateSubmitButton();
   }
 
   bindEvents() {
-    this.form.addEventListener(
-      "focus",
-      () => {
-        if (!this.startTime) {
-          this.startTime = Date.now();
-        }
-      },
-      true,
-    );
-
-    const checkbox = this.form.querySelector("#agreement");
-    if (checkbox) {
-      checkbox.addEventListener("change", () => {
-        this.updateSubmitButton();
-      });
-    }
-
-    this.form.addEventListener("input", (e) => {
-      this.collectFormData();
+    this.form.addEventListener("input", () => {
       this.updateSubmitButton();
-
-      if (e.target.id === "phone") {
-        this.formatPhone(e.target);
-      }
+      this.message?.remove();
+      this.message = null;
     });
+    this.form.addEventListener("change", () => this.updateSubmitButton());
 
-    const phoneInput = this.form.querySelector("#phone");
-    const emailInput = this.form.querySelector("#email");
-
-    if (phoneInput) {
-      phoneInput.addEventListener("blur", () => {
-        if (phoneInput.value.trim()) {
-          this.validatePhone();
-        }
-      });
-
-      phoneInput.addEventListener("focus", () => {
-        this.addPhonePrefix(phoneInput);
-      });
-    }
-
-    if (emailInput) {
-      emailInput.addEventListener("blur", () => {
-        if (emailInput.value.trim()) {
-          this.validateEmail();
+    for (const name of ["phone", "email", "name"]) {
+      const input = this.form.elements.namedItem(name);
+      input.addEventListener("blur", () => {
+        if (input.value.trim()) {
+          this.validateField(input);
         }
       });
     }
 
-    this.form.addEventListener("submit", (e) => this.handleSubmit(e));
-  }
-
-  formatPhone(input) {
-    let value = input.value.replace(/\D/g, "");
-
-    if (value.startsWith("8")) {
-      value = "7" + value.slice(1);
-    }
-
-    if (!value.startsWith("7")) {
-      value = "7" + value;
-    }
-
-    value = value.slice(0, 11);
-
-    let formatted = "+7";
-    if (value.length > 1) {
-      formatted += " (" + value.slice(1, 4);
-    }
-    if (value.length >= 5) {
-      formatted += ") " + value.slice(4, 7);
-    }
-    if (value.length >= 8) {
-      formatted += " " + value.slice(7, 9);
-    }
-    if (value.length >= 10) {
-      formatted += "-" + value.slice(9, 11);
-    }
-
-    input.value = formatted;
-  }
-
-  addPhonePrefix(input) {
-    if (!input.value) {
-      input.value = "+7 ";
-    }
-  }
-
-  validatePhone() {
-    const phoneInput = this.form.querySelector("#phone");
-    const value = phoneInput.value.trim();
-    const isValid = this.patterns.phone.test(value);
-
-    this.toggleFieldError(phoneInput, !isValid);
-    return isValid;
-  }
-
-  validateEmail() {
-    const emailInput = this.form.querySelector("#email");
-    const value = emailInput.value.trim();
-    const isValid = this.patterns.email.test(value);
-
-    this.toggleFieldError(emailInput, !isValid);
-    return isValid;
-  }
-
-  toggleFieldError(input, hasError) {
-    const field = input.closest(".form__field");
-    if (!field) {
-      return;
-    }
-
-    if (hasError) {
-      field.classList.add("form__field--error");
-    } else {
-      field.classList.remove("form__field--error");
-    }
-  }
-
-  collectFormData() {
-    this.formData = {
-      phone: this.form.querySelector("#phone")?.value.trim() || "",
-      email: this.form.querySelector("#email")?.value.trim() || "",
-      name: this.form.querySelector("#name")?.value.trim() || "",
-      agreement: this.form.querySelector("#agreement")?.checked || false,
-      website: this.form.querySelector("#website")?.value.trim() || "",
-    };
+    this.form.addEventListener("submit", (event) => this.handleSubmit(event));
   }
 
   updateSubmitButton() {
-    const submitBtn = this.form.querySelector(".form__submit");
-    if (!submitBtn) {
-      return;
-    }
-    submitBtn.disabled = !this.formData.agreement;
+    this.form.querySelector(".form__submit").disabled =
+      this.submitting || !this.form.elements.namedItem("agreement").checked;
   }
 
-  validateData() {
-    if (this.formData.website) {
-      this.log("Обнаружен бот: honeypot заполнен");
-      return false;
+  validateField(input) {
+    const value = input.value.trim();
+    let valid = value.length > 0;
+
+    if (input.name === "phone") {
+      const compact = value.replace(/[\s().-]/g, "");
+      const national = compact.replace(/^(?:\+44|0044)(?:0)?/, "0");
+      valid = /^0[12378]\d{8,9}$/.test(national);
+    } else if (input.name === "email") {
+      valid = value.length > 0 && input.validity.valid;
     }
 
-    const timeSpent = Date.now() - this.startTime;
-    if (timeSpent < this.minFillTime) {
-      this.log(`Форма заполнена слишком быстро: ${timeSpent}ms`);
-      return false;
-    }
-
-    if (!this.formData.phone || !this.formData.email || !this.formData.name) {
-      this.log("Не все обязательные поля заполнены");
-      return false;
-    }
-
-    if (!this.validatePhone()) {
-      this.log("Некорректный формат телефона");
-      return false;
-    }
-
-    if (!this.validateEmail()) {
-      this.log("Некорректный формат email");
-      return false;
-    }
-
-    if (!this.formData.agreement) {
-      this.log("Не принято соглашение");
-      return false;
-    }
-
-    return true;
-  }
-
-  setSubmitState(isLoading) {
-    const submitBtn = this.form.querySelector(".form__submit");
-    const textEl = submitBtn?.querySelector(".form__submit-text");
-    const loaderEl = submitBtn?.querySelector(".form__submit-loader");
-
-    if (!submitBtn || !textEl || !loaderEl) {
-      return;
-    }
-
-    if (isLoading) {
-      submitBtn.disabled = true;
-      textEl.hidden = true;
-      loaderEl.hidden = false;
-    } else {
-      textEl.hidden = false;
-      loaderEl.hidden = true;
-      this.updateSubmitButton();
-    }
+    input.setAttribute("aria-invalid", String(!valid));
+    input.closest(".form__field").classList.toggle("form__field--error", !valid);
+    return valid;
   }
 
   showFormMessage(type, text) {
-    const existing = this.form.querySelector(".form__message");
-    if (existing) {
-      existing.remove();
-    }
-
-    const messageEl = document.createElement("div");
-    messageEl.className = `form__message form__message--${type}`;
-    messageEl.textContent = text;
-
-    this.form.appendChild(messageEl);
-
-    setTimeout(() => {
-      if (messageEl.parentNode) {
-        messageEl.remove();
-      }
-    }, 5000);
+    this.message?.remove();
+    this.message = document.createElement("p");
+    this.message.className = `form__message form__message--${type}`;
+    this.message.setAttribute("role", type === "error" ? "alert" : "status");
+    this.message.textContent = text;
+    this.form.appendChild(this.message);
   }
 
-  async handleSubmit(e) {
-    e.preventDefault();
-
-    this.collectFormData();
-
-    if (!this.validateData()) {
+  async handleSubmit(event) {
+    event.preventDefault();
+    if (this.submitting) {
       return;
     }
 
-    this.log("Данные формы для отправки:", this.formData);
-
-    this.setSubmitState(true);
-
-    try {
-      const formData = new FormData();
-      formData.append("phone", this.formData.phone);
-      formData.append("email", this.formData.email);
-      formData.append("name", this.formData.name);
-      formData.append("agreement", this.formData.agreement ? "1" : "0");
-      formData.append("website", this.formData.website);
-
-      const response = await fetch(import.meta.env.VITE_FORM_ENDPOINT || "/telegram.php", {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        this.showFormMessage("success", result.message);
-        this.log("Успешная отправка:", result);
-        this.resetForm();
-      } else {
-        this.showFormMessage("error", result.message);
-        this.log("Ошибка:", result);
-      }
-    } catch (error) {
-      this.showFormMessage("error", "Ошибка соединения. Проверьте интернет.");
-      this.log("Ошибка сети:", error);
-    } finally {
-      this.setSubmitState(false);
+    if (this.form.elements.namedItem("website").value.trim()) {
+      return;
     }
-  }
 
-  resetForm() {
-    this.form.reset();
-    this.formData = {};
-    this.startTime = Date.now();
+    const fields = ["phone", "email", "name"].map((name) => this.form.elements.namedItem(name));
+    const invalidFields = fields.filter((input) => !this.validateField(input));
 
-    const errorFields = this.form.querySelectorAll(".form__field--error");
-    errorFields.forEach((field) => field.classList.remove("form__field--error"));
+    if (invalidFields.length) {
+      this.showFormMessage(
+        "error",
+        "Please enter your name, a valid email address and a UK phone number, such as 07700 900123 or +44 7700 900123.",
+      );
+      invalidFields[0].focus();
+      return;
+    }
 
+    if (!this.form.elements.namedItem("agreement").checked) {
+      this.showFormMessage("error", "Please tick the privacy acknowledgement.");
+      return;
+    }
+
+    if (!this.endpoint) {
+      this.showFormMessage(
+        "success",
+        "Your details are valid. This is a demo: your enquiry has not been sent or stored.",
+      );
+      return;
+    }
+    this.submitting = true;
+    this.form.setAttribute("aria-busy", "true");
+    this.form.querySelector(".form__submit-text").hidden = true;
+    this.form.querySelector(".form__submit-loader").hidden = false;
     this.updateSubmitButton();
+    const data = Object.fromEntries(fields.map((input) => [input.name, input.value.trim()]));
+    try {
+      const response = await fetch(this.endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, agreement: true, website: "" }),
+        signal: AbortSignal.timeout(12000),
+        credentials: "omit",
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(
+          result.message || "Your enquiry could not be delivered. Please try again later.",
+        );
+      }
+      this.showFormMessage("success", result.message);
+      this.form.reset();
+    } catch (error) {
+      this.showFormMessage(
+        "error",
+        error instanceof TypeError || error.name === "TimeoutError"
+          ? "Unable to reach the enquiry service. Please try again later."
+          : error.message,
+      );
+    } finally {
+      this.submitting = false;
+      this.form.setAttribute("aria-busy", "false");
+      this.form.querySelector(".form__submit-text").hidden = false;
+      this.form.querySelector(".form__submit-loader").hidden = true;
+      this.updateSubmitButton();
+    }
   }
 }
 

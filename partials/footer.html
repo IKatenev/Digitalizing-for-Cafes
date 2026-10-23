@@ -1,128 +1,129 @@
 <footer class="footer">
-  <!-- Декоративный разделитель -->
   <div class="footer__divider" aria-hidden="true"></div>
 
   <div class="footer__inner">
-    <nav class="footer__nav" aria-label="Карта сайта">
+    <nav class="footer__nav" aria-label="Site navigation">
       <div class="footer__nav-column">
-        <h3 class="footer__nav-title">Типы бизнеса</h3>
+        <h3 class="footer__nav-title">Business types</h3>
         <ul class="footer__nav-list">
-          <li><a href="#" class="footer__nav-link">Ресторан</a></li>
-          <li><a href="#" class="footer__nav-link">Кондитерская</a></li>
-          <li><a href="#" class="footer__nav-link">Кофейня</a></li>
-          <li><a href="#" class="footer__nav-link">Бар</a></li>
-          <li><a href="#" class="footer__nav-link">Кальянная</a></li>
-          <li><a href="#" class="footer__nav-link">Пекарня</a></li>
+          <li><a href="pricing.html#business-plans" class="footer__nav-link">Restaurant</a></li>
+          <li><a href="index.html#business-types" class="footer__nav-link">Cake shop</a></li>
+          <li><a href="index.html#business-types" class="footer__nav-link">Coffee shop</a></li>
+          <li><a href="index.html#business-types" class="footer__nav-link">Bar</a></li>
+          <li><a href="index.html#business-types" class="footer__nav-link">Shisha lounge</a></li>
+          <li><a href="index.html#business-types" class="footer__nav-link">Bakery</a></li>
         </ul>
       </div>
 
       <div class="footer__nav-column">
-        <h3 class="footer__nav-title">Другое</h3>
+        <h3 class="footer__nav-title">More</h3>
         <ul class="footer__nav-list">
-          <li><a href="#" class="footer__nav-link">Цены и тарифы</a></li>
+          <li><a href="plans.html#comparison" class="footer__nav-link">Pricing and plans</a></li>
         </ul>
       </div>
 
       <div class="footer__nav-column">
-        <h3 class="footer__nav-title">Продукты</h3>
+        <h3 class="footer__nav-title">Products</h3>
         <ul class="footer__nav-list">
-          <li><a href="#" class="footer__nav-link">POS Терминал</a></li>
-          <li><a href="#" class="footer__nav-link">Маркетинг</a></li>
-          <li><a href="#" class="footer__nav-link">Меню, тех.карты и каталог</a></li>
-          <li><a href="#" class="footer__nav-link">Кухонный экран</a></li>
-          <li><a href="#" class="footer__nav-link">Складской учёт</a></li>
-          <li><a href="#" class="footer__nav-link">Аналитика и отчёты</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__nav-column">
-        <h3 class="footer__nav-title">Компания</h3>
-        <ul class="footer__nav-list">
-          <li><a href="#why-us" class="footer__nav-link">Почему мы</a></li>
-          <li><a href="#" class="footer__nav-link">Партнерам</a></li>
+          <li><a href="pricing.html#hardware" class="footer__nav-link">POS terminal</a></li>
+          <li><a href="pricing.html#tools" class="footer__nav-link">Marketing</a></li>
           <li>
-            <a href="#" class="footer__nav-link">
-              Карьера
-              <span class="footer__nav-tag visible-mobile">Скоро</span>
-            </a>
+            <a href="pricing.html#tools" class="footer__nav-link">Menus, recipes and catalogue</a>
           </li>
-          <li>
-            <a href="#" class="footer__nav-link">
-              Блог
-              <span class="footer__nav-tag visible-mobile">Скоро</span>
-            </a>
-          </li>
+          <li><a href="pricing.html#hardware" class="footer__nav-link">Kitchen display</a></li>
+          <li><a href="pricing.html#tools" class="footer__nav-link">Stock control</a></li>
+          <li><a href="pricing.html#tools" class="footer__nav-link">Analytics and reports</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__nav-column">
+        <h3 class="footer__nav-title">Company</h3>
+        <ul class="footer__nav-list">
+          <li><a href="index.html#why-us" class="footer__nav-link">Why choose us</a></li>
+          <li><a href="#enquiry" class="footer__nav-link">Contact us</a></li>
+          <li><a href="pricing.html#tools" class="footer__nav-link">Features</a></li>
+          <li><a href="#demo-notice" class="footer__nav-link">About this demo</a></li>
         </ul>
       </div>
     </nav>
 
-    <div class="footer__contacts">
-      <!-- Исправление a11y: декоративные иконки с пустым alt -->
-      <a href="tel:+78007778967" class="footer__contacts-card">
+    <div class="footer__contacts" aria-label="Example contact details for this demo">
+      <div class="footer__contacts-card">
         <img
+          loading="lazy"
+          decoding="async"
           class="footer__contacts-icon footer__contacts-icon--phone"
           src="src/assets/icons/call.svg"
           alt=""
           width="64"
           height="64"
         />
-        <span class="footer__contacts-text">+7 (800) 777-89-67</span>
-      </a>
-      <a href="mailto:info@absolut.ru" class="footer__contacts-card">
+        <span class="footer__contacts-text">+44 (0)1632 960123</span>
+      </div>
+      <div class="footer__contacts-card">
         <img
+          loading="lazy"
+          decoding="async"
           class="footer__contacts-icon footer__contacts-icon--mail"
           src="src/assets/icons/mail.svg"
           alt=""
           width="64"
           height="64"
         />
-        <span class="footer__contacts-text">info@absolut.ru</span>
-      </a>
+        <span class="footer__contacts-text">info@absolut.example</span>
+      </div>
     </div>
 
+    <details class="footer__notice" id="demo-notice">
+      <summary>About this demo</summary>
+      <p>
+        This portfolio demo illustrates a POS website. Prices and contact details are examples. No
+        account registration, purchase or trial subscription is created here.
+      </p>
+    </details>
     <div class="footer__bottom">
-      <!-- Исправление a11y: декоративный слоган -->
       <p class="footer__slogan footer__slogan--tablet" aria-hidden="true">
-        Новое слово на POS-рынке
+        A fresh approach to POS
       </p>
 
-      <!-- Исправление: использованы Unicode-символы вместо HTML-сущностей -->
-      <span class="footer__copyright">© ООО «А ПОС» ("ABSOLUT POS" LLC)</span>
+      <span class="footer__copyright">© ABSOLUT POS LLC</span>
 
       <div class="footer__legal">
-        <a href="#" class="footer__legal-link">Политика обработки персональных данных</a>
-        <a href="#" class="footer__legal-link">Пользовательское соглашение</a>
+        <a href="#privacy-notice" class="footer__legal-link">Privacy notice</a>
+        <a href="#demo-notice" class="footer__legal-link">Demo information</a>
       </div>
-
-      <!-- Удалён пустой div -->
 
       <div class="footer__credits">
         <div class="footer__credits-text">
           <div class="footer__credits-item">
-            Дизайн —
+            Design by
             <span>REDIS</span>
           </div>
           <div class="footer__credits-item">
-            Разработка —
+            Development by
             <span>Salt & Pepper</span>
           </div>
         </div>
 
-        <!-- Исправление a11y: пустой alt внутри кнопки с aria-label -->
-        <button class="footer__to-top" id="to-top" type="button" aria-label="Вернуться наверх">
-          <img src="src/assets/icons/arrow-up.svg" alt="" width="19" height="10" />
+        <button class="footer__to-top" id="to-top" type="button" aria-label="Back to top">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="src/assets/icons/arrow-up.svg"
+            alt=""
+            width="19"
+            height="10"
+          />
         </button>
 
-        <!-- Исправление a11y: скрыт дублирующий копирайт -->
         <p class="footer__copyright footer__copyright--tablet" aria-hidden="true">
           © A POS 2023.
           <br />
-          Все права защищены
+          All rights reserved
         </p>
       </div>
     </div>
 
-    <!-- Исправление a11y: декоративный слоган -->
-    <p class="footer__slogan footer__slogan--laptop" aria-hidden="true">Новое слово на POS-рынке</p>
+    <p class="footer__slogan footer__slogan--laptop" aria-hidden="true">A fresh approach to POS</p>
   </div>
 </footer>

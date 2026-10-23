@@ -1,5 +1,4 @@
 @use "../abstracts" as *;
-@use "../utilities" as *;
 
 .btn {
   @include flex-center;
@@ -20,7 +19,7 @@
   transition: var(--transition);
 
   &:hover {
-    color: var(--orange-hover);
+    color: var(--white);
     box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 10%);
   }
 
@@ -28,14 +27,13 @@
   &:focus {
     transition: var(--transition);
     opacity: 0.85;
-    outline: none;
   }
 
   &:active {
     transform: scale(0.98);
     transition: var(--transition);
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;

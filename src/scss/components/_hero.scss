@@ -1,0 +1,155 @@
+@use "../abstracts" as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: rem(66) rem(16) rem(105.5);
+  max-height: fit-content;
+
+  @include laptop {
+    padding: rem(40) rem(16) rem(80);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: rem(1020);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  &__label {
+    font-family: var(--font-family);
+    font-size: rem(24);
+    line-height: 1;
+    letter-spacing: normal;
+    color: var(--gray-80);
+    margin-bottom: rem(24);
+    text-transform: uppercase;
+
+    @include laptop {
+      font-size: rem(16);
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+
+    @include fluid-text(90, 48);
+
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    margin: 0 0 rem(24);
+
+    @include laptop {
+      @include fluid-text(90, 40);
+
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-family);
+
+    @include fluid-text(30, 18);
+
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--gray-20);
+    margin: 0 0 rem(40);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  a.hero__link {
+    font-family: var(--font-family);
+    font-size: rem(14);
+    font-weight: 400;
+    color: var(--gray-80);
+    text-underline-offset: rem(2);
+    text-decoration: underline;
+
+    @include hover {
+      color: var(--orange-hover);
+    }
+  }
+
+  &__pills {
+    position: relative;
+    z-index: 1;
+    margin-top: rem(80);
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+    padding: rem(4);
+    border-radius: rem(50);
+    background: rgb(255 255 255 / 90%);
+
+    @include laptop {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: rem(48);
+      border-radius: rem(24);
+      background: transparent;
+      gap: rem(8);
+      padding: 0;
+    }
+  }
+
+  &__pill {
+    display: inline-flex;
+    align-items: center;
+    padding: rem(12) rem(20);
+    border-radius: rem(30);
+    font-family: var(--font-family);
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
+    color: var(--black);
+    min-height: rem(48);
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    &--active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    @include laptop {
+      font-size: rem(14);
+      padding: rem(8) rem(16);
+      min-height: rem(36);
+      border-radius: rem(20);
+      background: rgb(255 255 255 / 80%);
+
+      &--active {
+        background: var(--black);
+      }
+    }
+  }
+}

@@ -1,5 +1,4 @@
 @use "../abstracts" as *;
-@use "../utilities" as *;
 
 .header {
   white-space: nowrap;
@@ -14,9 +13,14 @@
     padding-right: rem(28);
 
     @include laptop {
-      justify-content: inherit;
+      justify-content: flex-end;
       gap: rem(8);
+
+      .logo {
+        margin-right: auto;
+      }
     }
+
     @include mobile {
       padding: 0 rem(12);
     }
@@ -69,6 +73,7 @@
         }
       }
     }
+
     @include laptop {
       justify-self: flex-end;
     }
@@ -84,7 +89,9 @@
     @include laptop {
       display: flex;
       max-width: 40rem;
-      min-width: rem(450);
+      width: min(100%, 28rem);
+      min-width: 0;
+      overflow-y: auto;
       flex-direction: column;
       justify-content: center;
       row-gap: 1.5rem;
@@ -94,7 +101,9 @@
       right: 0;
       padding: 1rem;
       background-color: var(--white);
-      transition: var(--transition);
+      transition:
+        translate 0.2s,
+        opacity 0.2s;
       z-index: 10;
 
       &:not(.is-active) {

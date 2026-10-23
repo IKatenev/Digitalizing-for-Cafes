@@ -44,17 +44,17 @@
   }
 
   @include laptop {
-      justify-self: flex-end;
-    }
+    justify-self: flex-end;
+  }
 
-    &[aria-label] {
+  &[aria-label] {
     position: relative;
 
     &::before {
       @include abs-center;
       @include square(rem(56));
 
-      content: '';
+      content: "";
     }
   }
 }

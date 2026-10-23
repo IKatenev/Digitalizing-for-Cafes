@@ -123,6 +123,7 @@
 
   &__contacts-text {
     @include fluid-text(36, 28);
+
     font-weight: 400;
     line-height: 1.1;
   }
@@ -142,6 +143,7 @@
 
     @include tablet {
       @include flex-center;
+
       flex-direction: column;
       gap: rem(10);
     }
@@ -159,9 +161,11 @@
       @include tablet-above {
         @include visually-hidden;
       }
+
       @include tablet {
         @include show;
       }
+
       margin-bottom: rem(20);
     }
   }
@@ -274,16 +278,20 @@
       padding: rem(40) 0 0;
       white-space: normal;
     }
+
     &--laptop {
       @include tablet {
         @include visually-hidden;
       }
+
       margin-bottom: rem(40);
     }
+
     &--tablet {
       @include tablet-above {
         @include visually-hidden;
       }
+
       margin-bottom: rem(19);
 
       @include mobile {
@@ -294,6 +302,5 @@
         font-size: rem(32);
       }
     }
-    
   }
 }

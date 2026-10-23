@@ -1,0 +1,183 @@
+@use "../abstracts" as *;
+
+.cta {
+  background: var(--white);
+  padding: rem(64) rem(40);
+
+  @include tablet {
+    padding: 0 rem(16);
+  }
+
+  &__inner {
+    max-width: rem(1360);
+    margin: 0 auto;
+
+    @include tablet {
+      padding: rem(48) 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    min-height: rem(650);
+    border-radius: rem(40);
+    background: linear-gradient(40deg, #b9e6ff 1.41%, #e3f2ff 50.52%, #dff4ff 100%);
+    overflow: hidden;
+
+    @include tablet {
+      border-radius: rem(32);
+      min-height: rem(600);
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: rem(110);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--black);
+    z-index: 2;
+
+    @include tablet {
+      font-size: rem(72);
+    }
+
+    @include mobile {
+      font-size: rem(56);
+    }
+  }
+
+  &__desc {
+    @include fluid-text(20, 16);
+
+    position: relative;
+    z-index: 2;
+    margin: rem(114) auto rem(40);
+    max-width: rem(320);
+    line-height: 1.2;
+    color: var(--gray-20);
+    text-align: center;
+
+    @include tablet {
+      margin: rem(112) auto rem(24);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 2;
+    left: 58%;
+    top: 69%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(142);
+    height: rem(142);
+    border: none;
+    border-radius: 50%;
+    background: var(--black);
+    mix-blend-mode: difference;
+    filter: invert(100%);
+    cursor: pointer;
+    transition: var(--transition);
+
+    @include hover {
+      color: var(--white);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 rem(8) rem(32) rgb(255 255 255 / 15%);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.97);
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__btn-text {
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--white);
+    text-align: center;
+  }
+
+  &__btn-tablet {
+    @include tablet-above {
+      display: none;
+    }
+
+    z-index: 2;
+    margin-bottom: rem(24);
+  }
+
+  &__decor {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+
+    &--1 {
+      background: url("/src/assets/images/glass_1.png") no-repeat;
+      background-size: rem(650);
+      width: rem(650);
+      height: rem(650);
+      left: -1%;
+      bottom: -8%;
+
+      @include tablet {
+        left: -20%;
+      }
+
+      @include mobile {
+        background: url("/src/assets/images/glass_tablet-bottom.png") no-repeat;
+        background-size: rem(750);
+        width: rem(750);
+        height: rem(750);
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: -36%;
+      }
+    }
+
+    &--2 {
+      background: url("/src/assets/images/glass_2.png") no-repeat;
+      background-size: rem(450);
+      width: rem(450);
+      height: rem(450);
+      left: 67%;
+      top: -3%;
+
+      @include mobile {
+        background: url("/src/assets/images/glass_tablet-top.png") no-repeat;
+        background-size: rem(750);
+        width: rem(750);
+        height: rem(750);
+        transform: translateX(-50%);
+
+        // transform: scale(2);
+        left: 50%;
+        top: -36%;
+      }
+    }
+  }
+}

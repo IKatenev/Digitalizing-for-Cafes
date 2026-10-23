@@ -9,20 +9,20 @@ A responsive marketing website for a café and retail point-of-sale product, imp
 [![Absolut POS — Desktop Preview](docs/screenshots/home-desktop.webp)](https://ikatenev.github.io/Digitalizing-for-Cafes/)
 
 <p align="center">
-  <img src="docs/screenshots/home-mobile.webp" alt="Responsive mobile homepage" width="280">
-  <img src="docs/screenshots/form-mobile.webp" alt="Interactive feedback form" width="280">
-  <img src="docs/screenshots/plans-mobile.webp" alt="Interactive mobile pricing comparison" width="280">
+  <img src="docs/screenshots/home-mobile.webp" alt="Responsive mobile homepage" width="240">
+  <img src="docs/screenshots/plans-mobile.webp" alt="Interactive mobile pricing comparison" width="240">
+  <img src="docs/screenshots/form-mobile.webp" alt="Interactive feedback form" width="240">
 </p>
 
 ## Overview
 
 The project covers three connected pages:
 
-| Page | What it shows |
-| --- | --- |
-| **Overview** | Hero section, product benefits, business categories and calls to action. |
-| **Pricing & hardware** | Product-related content, hardware and pricing sections. |
-| **Compare plans** | Feature comparisons and interactive plan selection on smaller screens. |
+| Page                   | What it shows                                                            |
+| ---------------------- | ------------------------------------------------------------------------ |
+| **Overview**           | Hero section, product benefits, business categories and calls to action. |
+| **Pricing & hardware** | Product-related content, hardware and pricing sections.                  |
+| **Compare plans**      | Feature comparisons and interactive plan selection on smaller screens.   |
 
 ## Frontend features
 
